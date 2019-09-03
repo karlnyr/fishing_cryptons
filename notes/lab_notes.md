@@ -77,6 +77,9 @@ to do now:
 
 * retrieve sequences from genomes by using  the output 6 format from blast through the script extract_flanks on uppmax
 * get genomes to uppmax, use the shortenScaffoldnames.pl to remove spaces in the genomes
-* use MAFFT, either server or local to align the sequences, to then draw a consensus sequence by viewing the new alignment to the genome of consensus.
+* use MAFFT, either server or local to align the sequences, to then draw a consensus sequence by viewing the new alignment to the genome the sequences came from
 
+Folder for the project:
+
+/proj/sllstore2017073/private/
 
