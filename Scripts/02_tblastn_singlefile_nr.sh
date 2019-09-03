@@ -1,6 +1,6 @@
 #!/usr/bin/bash -l
 
-#SBATCH -A sllstore2017073
+#SBATCH -A snic2018-3-568
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 00:05:00
@@ -21,5 +21,6 @@ for file in $IN_FILE_PATH/kirc*;
         command tblastn \
         -db nt \
         -query $file \
+        -outfmt 6 \
         -out $OUT_FILE_PATH/$OUT_NAME
 done
