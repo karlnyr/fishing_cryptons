@@ -48,3 +48,6 @@ So we will do it as follows:
  * download these genomes 
  * try to find a consensus sequence of the crypton used. 
  * rince and repeat for multiple cryptons
+
+### 03-09-19
+Trying to extract fasta header and putting them into a csv file, seems to be working now. This is to document what species that has already been analyzed, so when getting blast hits we will be able to remove the already reported hits.
