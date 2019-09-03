@@ -53,3 +53,27 @@ So we will do it as follows:
 Trying to extract fasta header and putting them into a csv file, seems to be working now. This is to document what species that has already been analyzed, so when getting blast hits we will be able to remove the already reported hits.
 
 So, trial run of Kirc into tblastn:
+in total, without limiting it, we get about 176 sequence hits into the nt database. 
+
+Gathering those with 5 or more hits:
+
+* 7 hits - Gaeumannomyces tritici R3-111a-1
+* 6 hits - Pyricularia oryzae 70-15
+* 12 hits - Exophiala oligosperma
+* 8 hits - Cyphellophora europaea CBS 101466
+* 5 hits - Aspergillus nidulans FGSC A4
+
+Then I guess we would like to see if an of these has had Kirc found in them before? As reference we are using the repbase database. Using the host name we can see if there are any records of the cryptons of our interest in the host:
+
+* Gaeumannomyces tritici R3-111a-1 - Not documentation
+* Pyricularia oryzae - No documentation
+* Exophiala oligosperma - No documentation
+* Cyphellophora europaea - No documentation
+* Aspergillus nidulans - No documentation
+
+Concerning? We cannot expect kirc to be present in any of the species, but the fact that we got good homologous searches which indicate sequence preserverence. 
+
+to do now:
+
+* retrieve sequences from genomes by using  the output 6 format from blast through the script extract_flanks on uppmax
+* use MAFFT, either server or local to align the sequences, to then draw a consensus sequence by viewing the new alignment to the genome of consensus.
