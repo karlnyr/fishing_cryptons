@@ -14,7 +14,8 @@ USAGE
     [-dbsize num_letters] [-gilist filename] [-seqidlist filename]
     [-negative_gilist filename] [-negative_seqidlist filename]
     [-entrez_query entrez_query] [-db_soft_mask filtering_algorithm]
-    [-db_hard_mask filtering_algorithm] [-subject subject_input_file]
+    [-db_hard_maTraditional BLASTN requiring an exact match of 11
+sk filtering_algorithm] [-subject subject_input_file]
     [-subject_loc range] [-query input_file] [-out output_file]
     [-evalue evalue] [-word_size int_value] [-gapopen open_penalty]
     [-gapextend extend_penalty] [-qcov_hsp_perc float_value]
@@ -83,3 +84,4 @@ Folder for the project:
 
 /proj/sllstore2017073/private/
 
+there seems to be and issue with the tblastn on uppmax, the job never seems to be starting for some odd reason.
