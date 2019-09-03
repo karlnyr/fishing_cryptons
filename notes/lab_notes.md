@@ -51,3 +51,5 @@ So we will do it as follows:
 
 ### 03-09-19
 Trying to extract fasta header and putting them into a csv file, seems to be working now. This is to document what species that has already been analyzed, so when getting blast hits we will be able to remove the already reported hits.
+
+So, trial run of Kirc into tblastn:
