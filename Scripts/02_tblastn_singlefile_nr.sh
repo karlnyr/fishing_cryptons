@@ -15,6 +15,7 @@ IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
 OUT_NAME='kirc_tblastn_020919'
 
+# Database used: nt - almost non-redundant database
 for file in $IN_FILE_PATH/kirc*;
     do
         command tblastn \
