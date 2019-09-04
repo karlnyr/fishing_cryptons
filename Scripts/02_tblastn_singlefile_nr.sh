@@ -11,7 +11,7 @@
 module load bioinfo-tools
 module load blast/2.7.1+
 
-IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/kirc.fasta'
+IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/kirc.fasta'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
 OUT_NAME='kirc_tblastn_020919'
 
