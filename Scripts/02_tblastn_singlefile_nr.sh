@@ -1,7 +1,7 @@
 #!/usr/bin/bash -l
 
 #SBATCH -A snic2018-3-568
-#SBATCH -p interactive
+#SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 01:00:00
 #SBATCH -J noniterative_tblastn_nt
