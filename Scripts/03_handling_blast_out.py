@@ -1,13 +1,17 @@
-import Bio
 import sys
-from Bio.Blast import NCBIXML
 
-with open(sys.argv[1]) as file:
-    blast_records = NCBIXML.parse(file)
 
-    for record in blast_records:
-        for alignment in blast_records.alignment:
-            for hsp in alignment.hsps:
-                print(hsp.query)
-                print(hsp.match)
-                print(hsp.match)
+def main():
+    model_RefSeq = []
+    genetic_RefSeq = []
+    with open(sys.argv[1]) as file:
+        for line in file:
+            split_line = line.split('\t')
+            if ['XM', 'XR', 'XP'] in split_line[1]:
+                model_RefSeq.append(line)
+            else:
+                genetic_RefSeq.append(line)
+    return model_RefSeq genetic_RefSeq
+
+
+main()
