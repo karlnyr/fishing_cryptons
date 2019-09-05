@@ -11,9 +11,10 @@
 module load bioinfo-tools
 module load blast/2.7.1+
 
-IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/Crypton_V_repbase090219.fasta'
+IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/'$file_name
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
-OUT_NAME='crypton_V_050919'
+ADD_DATE=`date %d%m%y`
+OUT_NAME=$file_name$ADD_DATE
 XML_EXT='.xml'
 FMT_6_EXT='_fmt6'
 
@@ -41,6 +42,6 @@ elif [[ $FMT = '5' ]];
             -out $OUT_FILE_PATH/$OUT_NAME$XML_EXT
     done
 else
-    echo 'No valid outformat was provided, try --export=FMT=<format>'
+    echo 'No valid outformat was provided, try sbatch <script> --export=FMT=<format>,file_name=<file name>'
 fi
 
