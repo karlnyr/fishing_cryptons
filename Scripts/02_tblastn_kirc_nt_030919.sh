@@ -11,17 +11,17 @@
 module load bioinfo-tools
 module load blast/2.7.1+
 
-IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/'$file_name
+IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/'$1
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
 ADD_DATE=`date %d%m%y`
-OUT_NAME=$file_name$ADD_DATE
+OUT_NAME=$1$ADD_DATE
 XML_EXT='.xml'
 FMT_6_EXT='_fmt6'
 
 # Database used: nt - almost non-redundant database
 # $FMT Needs to be passed from sbatach format
 
-if [[ $FMT = '6' ]];
+if [[ $2 = '6' ]];
     then
     for file in $IN_FILE_PATH;
         do
@@ -31,7 +31,7 @@ if [[ $FMT = '6' ]];
             -num_threads 4 \
             -out $OUT_FILE_PATH/$OUT_NAME$FMT_6_EXT
     done
-elif [[ $FMT = '5' ]];
+elif [[ $2 = '5' ]];
     then
     for file in $IN_FILE_PATH;
         do
@@ -42,6 +42,6 @@ elif [[ $FMT = '5' ]];
             -out $OUT_FILE_PATH/$OUT_NAME$XML_EXT
     done
 else
-    echo 'No valid outformat was provided, try sbatch <script> --export=FMT=<format>,file_name=<file name>'
+    echo 'No valid outformat was provided, try sbatch <script> <filename> <format>'
 fi
 
