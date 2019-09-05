@@ -27,7 +27,7 @@ if [[ $2 = '6' ]];
         do
             tblastn -db nt \
             -query $file \
-            -outfmt $FMT \
+            -outfmt $2 \
             -num_threads 4 \
             -out $OUT_FILE_PATH/$OUT_NAME$FMT_6_EXT
     done
@@ -37,11 +37,9 @@ elif [[ $2 = '5' ]];
         do
             tblastn -db nt \
             -query $file \
-            -outfmt $FMT \
+            -outfmt $2 \
             -num_threads 4 \
             -out $OUT_FILE_PATH/$OUT_NAME$XML_EXT
     done
-else
-    echo 'No valid outformat was provided, try sbatch <script> <filename> <format>'
 fi
 
