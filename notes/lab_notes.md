@@ -85,3 +85,21 @@ Folder for the project:
 /proj/sllstore2017073/private/
 
 there seems to be and issue with the tblastn on uppmax, the job never seems to be starting for some odd reason.
+
+### 04-09-19
+Tried to simply create my own blastdb and it seems to be working, think if there are other issues at hand here? goinga to try to increase the cores as well as the time even further, don't know why this should be such a heavy task. 
+
+Bash script for tblastn is now working, possible to perform something fancy as a larger script that would search iterably over a sequence of interest? 
+
+created script to extract fasta sequences after their header, extracted crypton_V due to few hits for Kirc, could be due to that Kirc is degenerated. We did find three hits in the P.Anserina species, which apparantly is an homologue to kirc. 
+
+"final" tblastn script created, needs to be edited for every run, please streamline this...
+
+### 05-09-19
+Today we will try to extract flanking sequences with Alex's script. For this we need the genome, and only from those organisms with a couple of hits that are not reported in repbase.
+
+Currently all blast queries through command line is with default settings.
+created script to separate the model sequences from the genomic sequences. Debating if I should create a script to extract taxonomy name, or if I should make a list and simply use online resources and later process it
+
+Trying to make the accession numbers to compress, and only if the have more that x amount of hits then we add the to the final list that we can use to find the taxa name through either 3rd party programme or not. 
+
