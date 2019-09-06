@@ -103,3 +103,19 @@ created script to separate the model sequences from the genomic sequences. Debat
 
 Trying to make the accession numbers to compress, and only if the have more that x amount of hits then we add the to the final list that we can use to find the taxa name through either 3rd party programme or not. 
 
+
+### 06-09-19
+downloaded the accession2taxid files [from](ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid). By using grep and awk I imagine I could extract the taxa name and respective ACN.
+
+```shell
+fgrep -w -f research_training_19/blast_queries/kirc_tblastn_020919_acn <accession2taxid> | awk 'F="\t" {print $3}' 
+```
+
+this oneliner above does extract column 2 from the output of the grep line above. The file structure of accession2taxid is build so that the accession version nr, which is what we get out of the blast hit, is kept in column 2. Searching the whole line through Gbs is inefficient so first I will use awk to extract column 2 and column 3 has the respective taxID. Then we also need to parse this through a taxid 2 taxaname db to find the actual taxa name, to then check if it is found already in the organism or not.
+
+```shell
+fgrep -w -f <out_from_script_above> nu 
+```
+
+Acc_nr -> taxid -> tax_name
+

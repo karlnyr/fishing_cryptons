@@ -14,43 +14,38 @@ def is_model_protein(accession_nr):
     else:
         return False
 
-########################## WORK IN PROGRESSSS ########################################
-def make_tuple(x):
-    '''make tuples for mapping'''
-    return (1, x)
-
-
-def do_sum(touple1, touple2):
-    '''sum two integers if second tuple matches'''
-    if touple1[1] == touple2[1]:
-        return(touple1[0] + touple1[0], v)
-
 
 def compress_accession_nrs(accession_nr_list):
+    '''Compress genomes hit of accession numbers, return a list of genomes that had more than 4 hits'''
+    temp_dict = {}
+    counter = 0
+    for acn in accession_nr_list:
+        if acn in temp_dict:
+            temp_dict[acn] += 1
+        else:
+            temp_dict[acn] = 1
+    return_list = []
+    for acn in temp_dict:
+        if temp_dict[acn] > 2:  # Needs 3 or more hits in blast query
+            return_list.append(f"{acn}\n")
+    return return_list
 
-    temp_list = []
-    mapped_list = map(make_tuple, accession_nr_list)
-    reduced_list = reduce(do_sum, mapped_list)
-
-########################## WORK IN PROGRESSSS ########################################
 
 def main():
-    try:
-        out_file_gene = open(sys.argv[2], 'w')
-        out_file_model = open(sys.argv[3], 'w')
-        # gene_accession_numbers = open(sys.argv[4], 'w')
-    except:
-        print("Not enought arguments supplied")
+
     gene_accession_numbers = []
-    with open(sys.argv[1]) as file:
-        for line in file:
+    with open(sys.argv[1], 'r') as in_file, \
+            open(sys.argv[2], 'w') as out_file_gene, \
+            open(sys.argv[3], 'w') as out_file_model, \
+            open(sys.argv[4], 'w') as file_acn:
+        for line in in_file:
             split_line = line.split('\t')
             if is_model_protein(split_line[1]):
                 out_file_model.write(line)
             else:
                 out_file_gene.write(line)
-                # gene_accession_numbers.write(f"{split_line[1]}\n")
-                gene_accession_numbers.append(f"{split_line[1]}\n")
+                gene_accession_numbers.append(f"{split_line[1]}")
+        file_acn.write("".join(compress_accession_nrs(gene_accession_numbers)))
 
 
 main()
