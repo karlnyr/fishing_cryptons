@@ -3,7 +3,7 @@
 #SBATCH -A snic2018-3-568
 #SBATCH -p core
 #SBATCH -n 4
-#SBATCH -t 01:30:00
+#SBATCH -t 00:30:00
 #SBATCH -J Extracting Taxa name from ACN
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
