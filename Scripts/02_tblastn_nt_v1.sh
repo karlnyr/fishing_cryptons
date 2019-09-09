@@ -11,7 +11,7 @@
 module load bioinfo-tools
 module load blast/2.7.1+
 
-IN_FILE_PATH='/home/karlnyr/research_training_19/crypton_sequences/consensus_sequences/'$1
+IN_FILE_PATH=$1
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
 ADD_DATE=`date +%d%m%y`
 OUT_NAME=$1$ADD_DATE
