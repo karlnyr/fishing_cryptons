@@ -14,30 +14,30 @@ module load blast/2.7.1+
 IN_FILE_PATH=$1
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries'
 ADD_DATE=`date +%d%m%y`
-OUT_NAME=$1$ADD_DATE
+OUT_NAME=$2$ADD_DATE
 XML_EXT='.xml'
 FMT_6_EXT='_fmt6'
 
 # Database used: nt - almost non-redundant database
 # $FMT Needs to be passed from sbatach format
 
-if [[ $2 = '6' ]];
+if [[ $3 = '6' ]];
     then
     for file in $IN_FILE_PATH;
         do
             tblastn -db nt \
             -query $file \
-            -outfmt $2 \
+            -outfmt $3 \
             -num_threads 4 \
             -out $OUT_FILE_PATH/$OUT_NAME$FMT_6_EXT
     done
-elif [[ $2 = '5' ]];
+elif [[ $3 = '5' ]];
     then
     for file in $IN_FILE_PATH;
         do
             tblastn -db nt \
             -query $file \
-            -outfmt $2 \
+            -outfmt $3 \
             -num_threads 4 \
             -out $OUT_FILE_PATH/$OUT_NAME$XML_EXT
     done
