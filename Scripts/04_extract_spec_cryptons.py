@@ -18,7 +18,7 @@ def main():
     with open(sys.argv[1]) as f:
         line = f.readline()
         while line:
-            if sys.argv[2] in line:
+            if sys.argv[2].lower() in line.lower():
                 new_seq = fasta_sequence(line)
                 line = f.readline()
                 while '>' not in line:
