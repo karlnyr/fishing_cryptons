@@ -3,7 +3,7 @@
 #SBATCH -A snic2018-3-568
 #SBATCH -p core
 #SBATCH -n 4
-#SBATCH -t 08:00:00
+#SBATCH -t 16:00:00
 #SBATCH -J noniterative_tblastn_nt
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
