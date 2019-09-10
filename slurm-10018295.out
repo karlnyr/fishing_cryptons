@@ -1,0 +1,62 @@
+CFastaReader: Hyphens are invalid and will be ignored around line 1
+FASTA-Reader: Ignoring invalid residues at position(s): On line 1: 1, 11-13, 17-18, 47
+CFastaReader: Hyphens are invalid and will be ignored around line 16
+FASTA-Reader: Ignoring invalid residues at position(s): On line 16: 1, 11-13, 17-18, 47
+CFastaReader: Hyphens are invalid and will be ignored around line 31
+FASTA-Reader: Ignoring invalid residues at position(s): On line 31: 1, 11-13, 17-18, 47
+CFastaReader: Hyphens are invalid and will be ignored around line 48
+FASTA-Reader: Ignoring invalid residues at position(s): On line 48: 1, 11-12, 16-17
+CFastaReader: Hyphens are invalid and will be ignored around line 66
+FASTA-Reader: Ignoring invalid residues at position(s): On line 66: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 82
+FASTA-Reader: Ignoring invalid residues at position(s): On line 82: 1, 11-12, 16-17, 40
+CFastaReader: Hyphens are invalid and will be ignored around line 97
+FASTA-Reader: Ignoring invalid residues at position(s): On line 97: 1, 11-12, 15-16, 45, 71
+CFastaReader: Hyphens are invalid and will be ignored around line 115
+FASTA-Reader: Ignoring invalid residues at position(s): On line 115: 1, 11-12, 17-18, 47, 74, 82-83
+CFastaReader: Hyphens are invalid and will be ignored around line 129
+FASTA-Reader: Ignoring invalid residues at position(s): On line 129: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 146
+FASTA-Reader: Ignoring invalid residues at position(s): On line 146: 1, 11-12, 16-17
+CFastaReader: Hyphens are invalid and will be ignored around line 164
+FASTA-Reader: Ignoring invalid residues at position(s): On line 164: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 183
+FASTA-Reader: Ignoring invalid residues at position(s): On line 183: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 197
+FASTA-Reader: Ignoring invalid residues at position(s): On line 197: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 222
+FASTA-Reader: Ignoring invalid residues at position(s): On line 222: 1, 11-12, 17-18, 41
+CFastaReader: Hyphens are invalid and will be ignored around line 234
+FASTA-Reader: Ignoring invalid residues at position(s): On line 234: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 251
+FASTA-Reader: Ignoring invalid residues at position(s): On line 251: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 267
+FASTA-Reader: Ignoring invalid residues at position(s): On line 267: 1, 11-12, 15-16, 29, 57, 83
+CFastaReader: Hyphens are invalid and will be ignored around line 289
+FASTA-Reader: Ignoring invalid residues at position(s): On line 289: 1, 11-12, 17-18, 38, 64
+CFastaReader: Hyphens are invalid and will be ignored around line 307
+FASTA-Reader: Ignoring invalid residues at position(s): On line 307: 1, 11-12, 15-16
+CFastaReader: Hyphens are invalid and will be ignored around line 320
+FASTA-Reader: Ignoring invalid residues at position(s): On line 320: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 336
+FASTA-Reader: Ignoring invalid residues at position(s): On line 336: 1, 11-12, 17-18, 41
+CFastaReader: Hyphens are invalid and will be ignored around line 347
+FASTA-Reader: Ignoring invalid residues at position(s): On line 347: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 363
+FASTA-Reader: Ignoring invalid residues at position(s): On line 363: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 379
+FASTA-Reader: Ignoring invalid residues at position(s): On line 379: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 395
+FASTA-Reader: Ignoring invalid residues at position(s): On line 395: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 415
+FASTA-Reader: Ignoring invalid residues at position(s): On line 415: 1, 11-12, 15-16, 45, 72, 80-81
+CFastaReader: Hyphens are invalid and will be ignored around line 428
+FASTA-Reader: Ignoring invalid residues at position(s): On line 428: 1, 11-12, 16-17, 46
+CFastaReader: Hyphens are invalid and will be ignored around line 441
+FASTA-Reader: Ignoring invalid residues at position(s): On line 441: 1, 11-12, 15-16, 39
+CFastaReader: Hyphens are invalid and will be ignored around line 456
+FASTA-Reader: Ignoring invalid residues at position(s): On line 456: 1, 11-12, 16-17, 40
+CFastaReader: Hyphens are invalid and will be ignored around line 468
+FASTA-Reader: Ignoring invalid residues at position(s): On line 468: 1, 11-12, 16-17, 46, 72
+CFastaReader: Hyphens are invalid and will be ignored around line 484
+FASTA-Reader: Ignoring invalid residues at position(s): On line 484: 1, 12-13, 16-17

@@ -1,2 +1,0 @@
-grep: /sw/data/uppnex/ncbi_taxonomy/latest/accession2taxid/download: Is a directory
-/var/spool/slurmd/job9992494/slurm_script: line 20: /home/karlnyr/research_trainging_19/blast_queries/genome_hits/kirc_tblastn_060919_taxa: No such file or directory
