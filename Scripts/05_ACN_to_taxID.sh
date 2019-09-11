@@ -16,5 +16,5 @@ OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/genome_hits'
 
 
 fgrep -w -f $1 $ACC_NR_2_TID_PATH | awk 'F="\t" {print $3}' > $OUT_FILE_PATH/$OUT_NAME'_tid.txt'
-fgrep -w -f $OUT_FILE_PATH/$OUT_NAME'_tid.txt' $ID_TO_NAME_PATH | awk 'F="\t" {print $3}' > $OUT_FILE_PATH/$OUT_NAME
+fgrep -w -f $OUT_FILE_PATH/$OUT_NAME'_tid.txt' $ID_TO_NAME_PATH | awk 'F="|" $4~/scientific name/ {print $2}' > $OUT_FILE_PATH/$OUT_NAME
 
