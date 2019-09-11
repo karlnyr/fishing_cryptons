@@ -60,3 +60,4 @@ CFastaReader: Hyphens are invalid and will be ignored around line 468
 FASTA-Reader: Ignoring invalid residues at position(s): On line 468: 1, 11-12, 16-17, 46, 72
 CFastaReader: Hyphens are invalid and will be ignored around line 484
 FASTA-Reader: Ignoring invalid residues at position(s): On line 484: 1, 12-13, 16-17
+Warning: [tblastn] lcl|Query_1 unnamed protein product: Warning: One or more O characters replaced by X for alignment score calculations at positions 5, 659, 1319, 2087, 2868, 2903, 2911, 3618, 3628, 3636, 4274, 4308, 4316, 5095, 5131, 5139, 5707, 5716, 5724, 6442,... (only first 20 shown) 
