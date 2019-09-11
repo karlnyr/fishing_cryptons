@@ -1,3 +1,5 @@
+/proj/sllstore2017073/private/
+
 ### 02-09-19
 ```bash
 $ module load bioinfo-tools
@@ -9,7 +11,7 @@ $ module load blast/2.7.1+
 
 $ tblastn -h
 USAGE
-  tblastn [-h] [-help] [-import_search_strategy filename]
+  tblastn [-h]v984kbncq75r1xf [-help] [-import_search_strategy filename]
     [-export_search_strategy filename] [-task task_name] [-db database_name]
     [-dbsize num_letters] [-gilist filename] [-seqidlist filename]
     [-negative_gilist filename] [-negative_seqidlist filename]
@@ -119,3 +121,34 @@ fgrep -w -f <out_from_script_above> nu
 
 Acc_nr -> taxid -> tax_name
 
+### 09-09-19
+Should probably make the script to get taxa also save the conversion file. Would be nice to have a final tabe of the structure $ACN $TAXID $TAXA_NAME. Should not be 2 complicated, simply print the row of the one file in combo with the other. 
+
+### 11-09-19
+Previous day consisted of reading articles and waiting for blast hits to return. Today the goal is to actually use the perl script to extract flanking sequences for a blast hit and then try to put these into and aligner, either bioedit or aliview. 
+
+```shell
+$ head -n 20 extractBlast_v2mod_1kbflanks.pl
+#!/usr/bin/perl
+
+
+use strict;
+use warnings;
+use List::Util qw(max min); #Loading the math modules "max" and "min" 
+
+# Input parameters 
+# If you want to have more parameters, just add more lines,
+# starting with "my" and $some_name=$ARGV[next number];
+# Note that the when you run the script you need to input the 
+# files in exactly this order. 
+my $BLASTLIST = $ARGV[0];
+my $ASSEMBLY = $ARGV[1];
+my $OUTFILE = $ARGV[2];
+#my $LISTOFSP = $ARGV[3];   #Needed for extracting blast hits
+
+my $flank = 1000;
+my $maxhitdist = 10000;
+my $frac = 0.8;
+```
+
+Script is very descriptive, don't really know if I need the 4th argument in extracting the sequences 
