@@ -110,7 +110,7 @@ Trying to make the accession numbers to compress, and only if the have more that
 downloaded the accession2taxid files [from](ftp://ftp.ncbi.nih.gov/pub/taxonomy/accession2taxid). By using grep and awk I imagine I could extract the taxa name and respective ACN.
 
 ```shell
-fgrep -w -f research_training_19/blast_queries/kirc_tblastn_020919_acn <accession2taxid> | awk 'F="\t" {print $3}' 
+fgrep -w -f research_training_19/blast_queries/kirc_tblastn_020919_acn <accession2taxid> | awk -F "\t" '{print $3}' 
 ```
 
 this oneliner above does extract column 2 from the output of the grep line above. The file structure of accession2taxid is build so that the accession version nr, which is what we get out of the blast hit, is kept in column 2. Searching the whole line through Gbs is inefficient so first I will use awk to extract column 2 and column 3 has the respective taxID. Then we also need to parse this through a taxid 2 taxaname db to find the actual taxa name, to then check if it is found already in the organism or not.
@@ -151,4 +151,9 @@ my $maxhitdist = 10000;
 my $frac = 0.8;
 ```
 
-Script is very descriptive, don't really know if I need the 4th argument in extracting the sequences 
+Script is very descriptive, don't really know if I need the 4th argument in extracting the sequences but I will try to run it simply using a blast hit for a genome that is downloaded on the uppmax service. 
+
+All ACN -> tid -> count_filter -> taxa_name -> check_taxa_named -> extractFlanks_X.pl -> Alignment tool
+
+### 12-09-19
+Very close on finishing the starting pipeline. Thus I would have a way of easily blasting a sequence and retrieving the taxa names with a good number of hits.

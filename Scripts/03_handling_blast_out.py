@@ -1,6 +1,5 @@
 import sys
-import csv
-from functools import reduce
+
 '''Used to separate model protein and gene hits from blast 6 formats,
 returns only those genomes that has X number of hits in the blast search.
 <script> <input_file> <out_dir> <out_index>'''
@@ -26,12 +25,12 @@ def compress_accession_nrs(accession_nr_list):
             temp_dict[acn] += 1
         else:
             temp_dict[acn] = 1
-    count_return_list = []
-    return_list = []
+#    acn_count_list = []
+    acn_list = []
     for acn in temp_dict:
-        count_return_list.append(f"{acn}\t{temp_dict[acn]}\n")
-        return_list.append(f"{acn}\n")
-    return count_return_list, return_list
+        #        acn_count_list.append(f"{acn}\t{temp_dict[acn]}\n")
+        acn_list.append(f"{acn}\n")
+    return acn_list
 
 
 def main():
@@ -40,8 +39,8 @@ def main():
     with open(sys.argv[1], 'r') as in_file, \
             open(f"{sys.argv[2]}{sys.argv[3]}_gene", 'w') as out_file_gene, \
             open(f"{sys.argv[2]}{sys.argv[3]}_model", 'w') as out_file_model, \
-            open(f"{sys.argv[2]}{sys.argv[3]}_acn", 'w') as file_acn, \
-            open(f"{sys.argv[2]}{sys.argv[3]}_count_list", 'w') as file_acn_count:
+            open(f"{sys.argv[2]}{sys.argv[3]}_acn", 'w') as file_acn:
+        #            open(f"{sys.argv[2]}{sys.argv[3]}_count_list", 'w') as file_acn_count
         for line in in_file:
             split_line = line.split('\t')
             if is_model_protein(split_line[1]):
@@ -49,9 +48,10 @@ def main():
             else:
                 out_file_gene.write(line)
                 gene_accession_numbers.append(f"{split_line[1]}")
-        count_list, acn_list = compress_accession_nrs(gene_accession_numbers)
-        file_acn.write("".join(acn_list))
-        file_acn_count.write("".join(count_list))
+#        count_list, acn_list = compress_accession_nrs(gene_accession_numbers)
+        # file_acn.write("".join(acn_list))
+        # file_acn_count.write("".join(count_list))
+        file_acn.write("".join(compress_accession_nrs(gene_accession_numbers)))
 
 
 main()
