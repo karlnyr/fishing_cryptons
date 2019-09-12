@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 16:00:00
-#SBATCH -J tblastn nt fmt 6 or 5
+#SBATCH -J tblastn_nt_fmt_6_or_5
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
 
