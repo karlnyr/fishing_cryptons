@@ -1,8 +1,9 @@
 import sys
+import csv
 from functools import reduce
 '''Used to separate model protein and gene hits from blast 6 formats,
 returns only those genomes that has X number of hits in the blast search.
-<script> <input_file> <out_dir> <out_index> <blast_hit_parameter>'''
+<script> <input_file> <out_dir> <out_index>'''
 
 
 def is_model_protein(accession_nr):
@@ -28,7 +29,6 @@ def compress_accession_nrs(accession_nr_list):
     count_return_list = []
     return_list = []
     for acn in temp_dict:
-        # if temp_dict[acn] > blast_hits:  # Needs X or more hits in blast query
         count_return_list.append(f"{acn}\t{temp_dict[acn]}\n")
         return_list.append(f"{acn}\n")
     return count_return_list, return_list
