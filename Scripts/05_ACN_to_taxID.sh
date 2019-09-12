@@ -15,7 +15,7 @@ HIT_PARAM=$4
 ACC_NR_2_TID_PATH='/sw/data/uppnex/ncbi_taxonomy/latest/accession2taxid/nucl_gb.accession2taxid'
 ID_TO_NAME_PATH='/sw/data/uppnex/ncbi_taxonomy/latest/names.dmp'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/genome_hits'
-PY_SCRIPT_PATH='/home/karlnyr/research_training_19/Scripts/06_filder_tid_count.py'
+PY_SCRIPT_PATH='/home/karlnyr/research_training_19/Scripts/06_filter_tid_count.py'
 
 fgrep -w -f $1 $ACC_NR_2_TID_PATH | \
     awk -F "\t" '{print $3}' > $OUT_FILE_PATH/$OUT_NAME'_tid.txt'
