@@ -32,10 +32,11 @@ def filter_tid(acn_tid_list, hit_param):
     return "".join(return_list)
 
 
-def main():
-    print(filter_tid(
-        compress_files(sys.argv[1], sys.argv[2]),
-        sys.argv[3]))
+def main(taxa_id_file, acn_counts, hit_param):
+    print(
+        filter_tid(
+            compress_files(taxa_id_file, acn_counts),
+            hit_param))
 
 
-main()
+main(sys.argv[1], sys.argv[2], sys.argv[3])
