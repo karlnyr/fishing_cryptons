@@ -33,9 +33,9 @@ def filter_tid(acn_tid_list, hit_param):
 
 
 def main():
-    filter_tid(
+    print(filter_tid(
         compress_files(sys.argv[1], sys.argv[2]),
-        sys.argv[3])
+        sys.argv[3]))
 
 
 main()
