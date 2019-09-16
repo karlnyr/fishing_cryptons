@@ -31,14 +31,14 @@ join -t $'\t' \
     -o 1.1,2.1 \
     <(sort -k1 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
     <(sort -k2 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
-    > $OUT_FILE_PATH/$OUT_FILE_PATH$FILT_A_T
+    > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
 
 rm $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
     -1 1 -2 1 \
     -o 1.1,1.2,2.1 \
-    $OUT_FILE_PATH/$OUT_FILE_PATH$FILT_A_T \
+    $OUT_FILE_PATH/$OUT_NAME$FILT_A_T \
     $ID_TO_NAME_PATH | \
     sort -n -k1 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
