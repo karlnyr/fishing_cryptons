@@ -157,3 +157,12 @@ All ACN -> tid -> count_filter -> taxa_name -> check_taxa_named -> extractFlanks
 
 ### 12-09-19
 Very close on finishing the starting pipeline. Thus I would have a way of easily blasting a sequence and retrieving the taxa names with a good number of hits.
+
+taxa id and scientific name was extracted by 
+
+```shell
+awk -F "|" '$4~/scientific name/ {print $1"\t"$2}' $namesdump_path > taxa_id_name 
+```
+
+on the 12-09-19
+

@@ -24,10 +24,11 @@ def filter_tid(acn_tid_file, hit_param):
         if int(temp_tid[t_id]['count']) > int(hit_param):
             return_list.append(t_id)
 
-    with open(f"{acn_tid_file}_A-T", 'w') as compiled_out:
-        for entry in temp_tid:
-            compiled_out.write(f"{entry}\t{temp_tid[entry]['acn']}\t{temp_tid[entry]['count']}")
+    # with open(f"{acn_tid_file}_A-T", 'w') as compiled_out:
+    #     for entry in temp_tid:
+    #         compiled_out.write(f"{entry}\t{temp_tid[entry]['acn']}\t{temp_tid[entry]['count']}")
 
+    return_list[-1] = return_list[-1].strip('\n')
     return "".join(return_list)
 
 
