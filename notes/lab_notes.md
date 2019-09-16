@@ -166,3 +166,17 @@ awk -F "|" '$4~/scientific name/ {print $1"\t"$2}' $namesdump_path > taxa_id_nam
 
 on the 12-09-19
 
+### 16-09-19
+sorted the taxa_id-name file, to be used later on in the join to be performed.
+
+```shell
+sort -k1 -o sorted_taxa_id_name taxa_id_name 
+
+# Then the ids filtered where joined with the names by using join
+
+join -t $'\t' \
+    -1 1 -2 1 \
+    -o 1.1,1.2,2.1 \
+    filtered_acn_tid sorted_taxa_id_name | sort -nk1 > filtered_blast_hits
+```
+

@@ -4,3 +4,6 @@ blastp kirc into genbank, blastp now has taxa. Selection by relevance, if there 
 * Make sure now to get acquianted with blastp and maybe the flanking sequence script on the lab site. 
 * Get access to rackham
 * Find paper or method on searching for unannotated sequences in eukaryotic genomes
+
+### 16-09-19 - Aron, Alex, Karl
+Scripts that can extract top hits for alignments. Use shorten scaffold script, not rename, to get the corrected genome. See it to be done with the sequences by tomorrow 17-09-19 16:30. JC on monday (23-09-19) monday 11:00.
