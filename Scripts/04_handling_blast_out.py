@@ -8,7 +8,8 @@ returns only those genomes that has X number of hits in the blast search.
 def is_model_protein(accession_nr):
     '''Model protein checker, uses GENBANK accession numbers to verify'''
 
-    model_index = ['XM', 'XR', 'XP']  # Indexing used on protein model sequences used for blast database
+    # Indexing used on protein model sequences used for blast database
+    model_index = ['XM', 'XR', 'XP']
 
     if any(index in accession_nr for index in model_index):
         return True
@@ -17,7 +18,8 @@ def is_model_protein(accession_nr):
 
 
 def compress_accession_nrs(accession_nr_list):
-    '''Compress genomes hit of accession numbers, return a list of genomes that had more than 4 hits'''
+    '''Compress genomes hit of accession numbers, return a list of
+    genomes that had more than 4 hits'''
     temp_dict = {}
     counter = 0
     for acn in accession_nr_list:
@@ -25,10 +27,8 @@ def compress_accession_nrs(accession_nr_list):
             temp_dict[acn] += 1
         else:
             temp_dict[acn] = 1
-#    acn_count_list = []
     acn_list = []
     for acn in temp_dict:
-        #        acn_count_list.append(f"{acn}\t{temp_dict[acn]}\n")
         acn_list.append(f"{acn}\n")
     return acn_list
 
@@ -40,7 +40,6 @@ def main():
             open(f"{sys.argv[2]}{sys.argv[3]}_gene", 'w') as out_file_gene, \
             open(f"{sys.argv[2]}{sys.argv[3]}_model", 'w') as out_file_model, \
             open(f"{sys.argv[2]}{sys.argv[3]}_acn", 'w') as file_acn:
-        #            open(f"{sys.argv[2]}{sys.argv[3]}_count_list", 'w') as file_acn_count
         for line in in_file:
             split_line = line.split('\t')
             if is_model_protein(split_line[1]):
@@ -48,9 +47,6 @@ def main():
             else:
                 out_file_gene.write(line)
                 gene_accession_numbers.append(f"{split_line[1]}")
-#        count_list, acn_list = compress_accession_nrs(gene_accession_numbers)
-        # file_acn.write("".join(acn_list))
-        # file_acn_count.write("".join(count_list))
         file_acn.write("".join(compress_accession_nrs(gene_accession_numbers)))
 
 

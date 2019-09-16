@@ -19,7 +19,6 @@ XML_EXT='.xml'
 FMT_6_EXT='_fmt6'
 
 # Database used: nt - almost non-redundant database
-# $FMT Needs to be passed from sbatach format
 
 if [[ $3 = '6' ]];
     then

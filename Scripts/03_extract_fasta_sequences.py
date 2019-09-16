@@ -1,5 +1,6 @@
 import sys
-
+'''Search through fasta headers for a given argument in given file
+<script> <input_file> <search_word>'''
 
 class fasta_sequence:
     '''fasta initializer, used to capture fasta header and sequence'''
