@@ -39,6 +39,6 @@ join -t $'\t' \
     -1 1 -2 1 \
     -o 1.1,1.2,2.1 \
     $OUT_FILE_PATH/$OUT_NAME$FILT_A_T \
-    $ID_TO_NAME_PATH | \
+    <(sort -k1 $ID_TO_NAME_PATH) | \
     sort -n -k1 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
