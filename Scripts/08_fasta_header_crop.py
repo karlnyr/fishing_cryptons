@@ -15,4 +15,5 @@ with open(sys.argv[1], 'r') as input_f, \
                 new_line = input_f.readline()
         else:
             new_line = input_f.readline()
+
     print("\nCropped!\n")
