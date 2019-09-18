@@ -21,7 +21,7 @@ def filter_tid(acn_tid_file, hit_param):
             temp_tid[item[1]] = {'count': 1, 'acn': [item[0]]}
 
     for t_id in temp_tid:
-        if int(temp_tid[t_id]['count']) > int(hit_param):
+        if int(temp_tid[t_id]['count']) >= int(hit_param):
             return_list.append(t_id)
 
     return_list[-1] = return_list[-1].strip('\n')
