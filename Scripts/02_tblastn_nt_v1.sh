@@ -16,7 +16,7 @@ ADD_DATE=`date +%d%m%y`
 OUT_NAME=$2'_'$ADD_DATE
 # For format 6 = 6, for xml out = 5
 OUT_FMT=$3
-OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/raw_fmt6d'
+OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/raw_fmt6/'
 XML_EXT='.xml'
 FMT_6_EXT='_fmt6'
 
