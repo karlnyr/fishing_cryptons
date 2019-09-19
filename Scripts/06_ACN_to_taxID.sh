@@ -29,16 +29,16 @@ join -t $'\t' \
     > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
 echo "Done"
 
-echo "Initiate blast hit filtering (python)"
+echo "Initiate blast hit filtering(python), fetching sequences with more than "$HIT_PARAM" hits to the same taxa"
 python3 $PY_SCRIPT_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 echo "Done"
 
-echo "Initiate blast hit filtering (shell)"
+echo "Initiate blast hit filtering(shell), retri"
 join -t $'\t' \
-    -1 1 -2 3 \
+    -1 2 -2 1 \
     -o 2.1,2.2,2.3 \
-    <(sort -k1 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
+    <(sort -t $'\t' -k2 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
     <(sort -k3 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
 echo "Done"
