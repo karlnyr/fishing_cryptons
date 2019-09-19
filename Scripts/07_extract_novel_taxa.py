@@ -16,7 +16,7 @@ with open(sys.argv[1]) as rep_f, \
         flag = 0
         while flag == 0 and loop_c <= hit_count:
             for row in rb:
-                if filt_hit[2] == row['discovered in']:
+                if filt_hit[2] == row['discovered in'] and filt_hit[0]:
                     print(f"{filt_hit[2]} = {species}")
                     flag = 1
                     loop_c += 1

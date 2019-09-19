@@ -20,26 +20,34 @@ FILT_EXT='h'$HIT_PARAM'_f_tid'
 FILT_A_T='h'$HIT_PARAM'_filt_acn_tid'
 FILT_BLAST='h'$HIT_PARAM'_filtered_blast_hits'
 
+echo "Initiate ACN to TID search"
 join -t $'\t' \
     -1 2 -2 2 \
     -o 1.1,1.2,2.3 \
     <(sort -t$'\t' -k2 $1) \
     <(sort -t$'\t' -k2 $ACC_NR_2_TID_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
+echo "Done"
 
+echo "Initiate blast hit filtering (python)"
 python3 $PY_SCRIPT_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
+echo "Done"
 
+echo "Initiate blast hit filtering (shell)"
 join -t $'\t' \
     -1 1 -2 3 \
     -o 2.1,2.2,2.3 \
     <(sort -k1 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
     <(sort -k3 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
+echo "Done"
 
+echo "Initate final join on taxa id to taxa name"
 join -t $'\t' \
     -1 3 -2 1 \
     -o 1.1,1.2,1.3,1.4,2.2 \
     <(sort -t $'\t' -k3 $OUT_FILE_PATH/$OUT_NAME$FILT_A_T) \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
+echo "Done"
