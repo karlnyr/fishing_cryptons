@@ -31,13 +31,11 @@ python3 $PY_SCRIPT_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
-    -1 1 -2 2 \
+    -1 1 -2 3 \
     -o 2.1,2.2,2.3 \
     <(sort -k1 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
-    <(sort -k2 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
+    <(sort -k3 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
-
-rm $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
     -1 3 -2 1 \
