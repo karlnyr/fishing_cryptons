@@ -37,7 +37,6 @@ rm $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
     -1 1 -2 1 \
-    -o 1.1,1.2,2.2
     $OUT_FILE_PATH/$OUT_NAME$FILT_A_T \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
     | sort -n -k1 \
