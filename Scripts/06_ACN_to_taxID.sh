@@ -25,7 +25,7 @@ join -t $'\t' \
     -1 2 -2 2 \
     -o 1.1,1.2,2.3 \
     <(sort -t$'\t' -k2 $1) \
-    <(sort -t$'\t' -k2 $ACC_NR_2_TID_PATH) \
+    <(sort -t$'\t' -k2,2 $ACC_NR_2_TID_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
 echo "Done"
 
