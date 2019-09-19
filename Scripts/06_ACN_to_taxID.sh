@@ -20,15 +20,19 @@ FILT_EXT='h'$HIT_PARAM'_f_tid'
 FILT_A_T='h'$HIT_PARAM'_filt_acn_tid'
 FILT_BLAST='h'$HIT_PARAM'_filtered_blast_hits'
 
-fgrep -w -f $1 $ACC_NR_2_TID_PATH | \
-    awk -F "\t" '{print $2"\t"$3}' > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
+join -t $'\t' \
+    -1 2 -2 2 \
+    -o 1.1,1.2,2.3 \
+    <(sort -t$'\t' -k2 $1) \
+    <(sort -t$'\t' -k2 $ACC_NR_2_TID_PATH) \
+    > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
 
 python3 $PY_SCRIPT_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
     -1 1 -2 2 \
-    -o 1.1,2.1 \
+    -o 2.1,2.2,2.3 \
     <(sort -k1 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
     <(sort -k2 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
@@ -36,8 +40,7 @@ join -t $'\t' \
 rm $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 
 join -t $'\t' \
-    -1 1 -2 1 \
+    -1 3 -2 1 \
     $OUT_FILE_PATH/$OUT_NAME$FILT_A_T \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
-    | sort -n -k1 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
