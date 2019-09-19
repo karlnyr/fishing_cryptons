@@ -11,8 +11,8 @@
 ACN_FILE=$1
 OUT_NAME=$2
 HIT_PARAM=$3
-ACC_NR_2_TID_PATH='/sw/data/uppnex/ncbi_taxonomy/latest/accession2taxid/nucl_gb.accession2taxid'
-ID_TO_NAME_PATH='/home/karlnyr/ncbi_taxa_names/sorted_taxa_id-name'
+ACC_NR_2_TID_PATH='/home/karlnyr/ncbi_taxa/accession2taxid'
+ID_TO_NAME_PATH='/home/karlnyr/ncbi_taxa/sorted_taxa_id-name'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/genome_hits'
 PY_SCRIPT_PATH='/home/karlnyr/research_training_19/Scripts/05_filter_tid_count.py'
 A_T_EXT='_acn_tid'
