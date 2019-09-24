@@ -46,7 +46,7 @@ echo "3 - Done"
 echo "4 - Initate final join on taxa id to taxa name"
 join -t $'\t' \
     -1 3 -2 1 \
-    -o 1.1,1.2,1.3,2.2 \
+    -o 1.1,1.2,1.3,2.4 \
     <(sort -t $'\t' -k3,3 $OUT_FILE_PATH/$OUT_NAME$FILT_A_T) \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
