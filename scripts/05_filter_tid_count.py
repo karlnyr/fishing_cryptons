@@ -24,7 +24,6 @@ def filter_tid(acn_tid_file, hit_param):
             temp_tid[item[2]] = {}
             temp_tid[item[2]][item[0]] = {}
             temp_tid[item[2]][item[0]]['count'] = 1
-
     for t_id in temp_tid:
         for protein in temp_tid[t_id]:
             if temp_tid[t_id][protein]['count'] >= int(hit_param):

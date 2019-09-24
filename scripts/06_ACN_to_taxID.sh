@@ -16,14 +16,14 @@ ID_TO_NAME_PATH='/home/karlnyr/ncbi_taxa/sorted_taxa_id-name'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/genome_hits'
 PY_SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/05_filter_tid_count.py'
 A_T_EXT='_acn_tid'
-FILT_EXT='h'$HIT_PARAM'_f_tid'
-FILT_A_T='h'$HIT_PARAM'_filt_acn_tid'
-FILT_BLAST='h'$HIT_PARAM'_filtered_blast_hits'
+FILT_EXT='_h'$HIT_PARAM'_f_tid'
+FILT_A_T='_h'$HIT_PARAM'_filt_acn_tid'
+FILT_BLAST='_h'$HIT_PARAM'_filtered_blast_hits'
 
 echo "1 - Initiate ACN to TID search"
 join -t $'\t' \
     -1 2 -2 1 \
-    -o 1.1,1.2,2.3 \
+    -o 1.1,1.2,2.2 \
     <(sort -t $'\t' -k2,2 $1) \
     <(sort -t $'\t' -k1,1 $ACC_NR_2_TID_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$A_T_EXT
@@ -38,8 +38,8 @@ echo "3 - Initiate blast hit filtering(shell), fetching these proteins from all 
 join -t $'\t' \
     -1 2 -2 1 \
     -o 2.1,2.2,2.3 \
-    <(sort -t $'\t' -k2 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
-    <(sort -t $'\t' -k1 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
+    <(sort -t $'\t' -k2,2 $OUT_FILE_PATH/$OUT_NAME$FILT_EXT) \
+    <(sort -t $'\t' -k1,1 $OUT_FILE_PATH/$OUT_NAME$A_T_EXT) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_A_T
 echo "3 - Done"
 
@@ -47,7 +47,7 @@ echo "4 - Initate final join on taxa id to taxa name"
 join -t $'\t' \
     -1 3 -2 1 \
     -o 1.1,1.2,1.3,2.2 \
-    <(sort -t $'\t' -k3 $OUT_FILE_PATH/$OUT_NAME$FILT_A_T) \
+    <(sort -t $'\t' -k3,3 $OUT_FILE_PATH/$OUT_NAME$FILT_A_T) \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
 echo "4 - Done"
