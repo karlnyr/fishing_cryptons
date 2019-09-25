@@ -158,13 +158,10 @@ All ACN -> tid -> count_filter -> taxa_name -> check_taxa_named -> extractFlanks
 ### 12-09-19
 Very close on finishing the starting pipeline. Thus I would have a way of easily blasting a sequence and retrieving the taxa names with a good number of hits.
 
-taxa id and scientific name was extracted by 
-
+taxa id and scientific name was extracted on the 12-09-19 by:
 ```shell
 awk -F "|" '$4~/scientific name/ {print $1"\t"$2}' $namesdump_path > taxa_id_name 
 ```
-
-on the 12-09-19
 
 ### 16-09-19
 sorted the taxa_id-name file, to be used later on in the join to be performed.
@@ -179,4 +176,7 @@ join -t $'\t' \
     -o 1.1,1.2,2.1 \
     filtered_acn_tid sorted_taxa_id_name | sort -nk1 > filtered_blast_hits
 ```
+
+### 19-09-19
+Mainly been trying to perfect the pipeline. Came up with new ideas how to do it properly. Current status is to blast, then see if one sequence matches to the same taxa more then 5 times. The next step will be to then check if these proteins are discovered in this taxa, and if not, I want to retrieve their lines from the fmt6 file to then extract the sequences from the target genome. 
 

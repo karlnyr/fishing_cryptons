@@ -11,14 +11,19 @@
 ACN_FILE=$1
 OUT_NAME=$2
 HIT_PARAM=$3
+GENE_MODELS=$4
+REPBASE='/home/karlnyr/research_training_19/repbase_020919/extracted/documented_cryptons_repbase_020919.csv'
 ACC_NR_2_TID_PATH='/home/karlnyr/ncbi_taxa/accession2taxid'
 ID_TO_NAME_PATH='/home/karlnyr/ncbi_taxa/sorted_taxa_id-name'
 OUT_FILE_PATH='/home/karlnyr/research_training_19/blast_queries/genome_hits'
-PY_SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/05_filter_tid_count.py'
+PY_05_PATH='/home/karlnyr/research_training_19/scripts/05_filter_tid_count.py'
+PY_07_PATH='/home/karlnyr/research_training_19/scripts/07_extract_novel_taxa.py'
 A_T_EXT='_acn_tid'
 FILT_EXT='_h'$HIT_PARAM'_f_tid'
 FILT_A_T='_h'$HIT_PARAM'_filt_acn_tid'
 FILT_BLAST='_h'$HIT_PARAM'_filtered_blast_hits'
+UINIQ_COMB='_h'$HIT_PARAM'_unique_hits'
+NOVEL_TAXA='_novel_taxa'
 
 echo "1 - Initiate ACN to TID search"
 join -t $'\t' \
@@ -30,7 +35,7 @@ join -t $'\t' \
 echo "1 - Done"
 
 echo "2 - Initiate blast hit filtering(python), fetching sequences with more than "$HIT_PARAM" hits to the same taxa"
-python3 $PY_SCRIPT_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
+python3 $PY_05_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 echo "2 - Done"
 
@@ -51,3 +56,17 @@ join -t $'\t' \
     <(sort -t $'\t' -k1,1 $ID_TO_NAME_PATH) \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST
 echo "4 - Done"
+
+echo "5 - Filtering out unique protein and taxa combinations"
+cut -f1,2,4 $OUT_FILE_PATH/$OUT_NAME$FILT_BLAST \
+    | uniq \
+    | sort -k1 > $OUT_FILE_PATH/$OUT_NAME$UINIQ_COMB
+echo "5 - Done"
+
+echo "6 - Extracting format 6 information of filtered proteins"
+python3 $PY_07_PATH \
+    $REPBASE \
+    $OUT_FILE_PATH/$OUT_NAME$UINIQ_COMB \
+    $4 \
+    $OUT_FILE_PATH/$OUT_NAME
+echo "6 - Done"
