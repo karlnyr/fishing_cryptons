@@ -53,7 +53,8 @@ def novel_taxa(repbase_file, blast_file, fmt_6, out_file):
                     extr_f6.append(f6[hit])
 
         for line in extr_f6:
-            out_f.write("\t".join(line))
+            temp_line = "\t".join(line)
+            out_f.write(f"{temp_line}\n")
 
 
 novel_taxa(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])

@@ -9,9 +9,10 @@
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
 
 ACN_FILE=$1
-OUT_NAME=$2
-HIT_PARAM=$3
-GENE_MODELS=$4
+GENE_MODELS=$2
+OUT_NAME=$3
+HIT_PARAM=$4
+
 REPBASE='/home/karlnyr/research_training_19/repbase_020919/extracted/documented_cryptons_repbase_020919.csv'
 ACC_NR_2_TID_PATH='/home/karlnyr/ncbi_taxa/accession2taxid'
 ID_TO_NAME_PATH='/home/karlnyr/ncbi_taxa/sorted_taxa_id-name'
@@ -35,7 +36,7 @@ join -t $'\t' \
 echo "1 - Done"
 
 echo "2 - Initiate blast hit filtering(python), fetching sequences with more than "$HIT_PARAM" hits to the same taxa"
-python3 $PY_05_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $3 \
+python3 $PY_05_PATH $OUT_FILE_PATH/$OUT_NAME$A_T_EXT $4 \
     > $OUT_FILE_PATH/$OUT_NAME$FILT_EXT
 echo "2 - Done"
 
