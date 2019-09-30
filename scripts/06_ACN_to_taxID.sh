@@ -21,7 +21,6 @@ PY_05_PATH='/home/karlnyr/research_training_19/scripts/05_filter_tid_count.py'
 PY_07_PATH='/home/karlnyr/research_training_19/scripts/07_extract_novel_taxa.py'
 A_T_EXT='_acn_tid'
 FILT_EXT='_h'$HIT_PARAM'_f_tid'
-FILT_A_T='_h'$HIT_PARAM'_filt_acn_tid'
 FILT_BLAST='_h'$HIT_PARAM'_filtered_blast_hits'
 UINIQ_COMB='_h'$HIT_PARAM'_unique_hits'
 NOVEL_TAXA='_novel_taxa'
@@ -59,6 +58,6 @@ echo "5 - Extracting format 6 information of filtered proteins"
 python3 $PY_07_PATH \
     $REPBASE \
     $OUT_FILE_PATH/$OUT_NAME$UINIQ_COMB \
-    $4 \
+    $2 \
     $OUT_FILE_PATH/$OUT_NAME
 echo "5 - Done"
