@@ -180,3 +180,42 @@ join -t $'\t' \
 ### 19-09-19
 Mainly been trying to perfect the pipeline. Came up with new ideas how to do it properly. Current status is to blast, then see if one sequence matches to the same taxa more then 5 times. The next step will be to then check if these proteins are discovered in this taxa, and if not, I want to retrieve their lines from the fmt6 file to then extract the sequences from the target genome. 
 
+### 25-09-19
+preparing some data of information for the symposium. 
+
+```shell
+$ cut -f1,13 crypt_v_180919_filt_fmt6 | uniq | wc -l
+113
+# meaning that if take the number of probable novel crypton hits and filter for query and taxa we get 113 newly found combinations
+$ cut -f1 <(cut -f1,13 crypt_v_180919_filt_fmt6 | uniq) | uniq
+CryptonV-10_CFl_1p
+CryptonV-11_CFl_1p
+CryptonV-12_CFl_1p
+CryptonV-1_BTa_1p
+CryptonV-1_CFl_1p
+CryptonV-1_CGi_1p
+# There are 6 probable cryptons that has seen homology, resulting in 113 probable novel hosts
+cut -f1,13 crypt_v_180919_filt_fmt6 | uniq | grep 'CryptonV-1_CGi_1p'
+CryptonV-1_CGi_1p   Danio rerio
+CryptonV-1_CGi_1p   Oryzias latipes
+CryptonV-1_CGi_1p   Scophthalmus maximus
+CryptonV-1_CGi_1p   Lateolabrax maculatus
+CryptonV-1_CGi_1p   Danio rerio
+CryptonV-1_CGi_1p   Dicentrarchus labrax
+CryptonV-1_CGi_1p   Oryzias latipes
+CryptonV-1_CGi_1p   Cyprinus carpio
+CryptonV-1_CGi_1p   Parambassis ranga
+CryptonV-1_CGi_1p   Betta splendens
+CryptonV-1_CGi_1p   Anabas testudineus
+CryptonV-1_CGi_1p   Denticeps clupeoides
+CryptonV-1_CGi_1p   Mastacembelus armatus
+CryptonV-1_CGi_1p   Sparus aurata
+CryptonV-1_CGi_1p   Scleropages formosus
+CryptonV-1_CGi_1p   Takifugu rubripes
+CryptonV-1_CGi_1p   Salarias fasciatus
+CryptonV-1_CGi_1p   Sphaeramia orbicularis
+CryptonV-1_CGi_1p   Gadus morhua
+CryptonV-1_CGi_1p   Coregonus sp. 'balchen'
+CryptonV-1_CGi_1p   Chanos chanos
+# For instance, CryptonV-1_CGI has 5 or more hits to these 21 species.
+```
