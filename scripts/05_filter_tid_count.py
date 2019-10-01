@@ -9,28 +9,34 @@ def filter_tid(acn_tid_file, hit_param):
     at_list = []
     filtered_list = []
     temp_tid = {}
+    return_list = []
 
     with open(acn_tid_file, 'r') as at_file:
+        # Parse file
         for line in at_file:
             at_list.append(line.split('\t'))
         for item in at_list:
-            if item[2] in temp_tid:
+
+            if item[0] in temp_tid:
                 try:
-                    temp_tid[item[2]][item[0]]['count'] += 1
+                    temp_tid[item[0]][item[2]]['count'] += 1
                 except KeyError:
-                    temp_tid[item[2]][item[0]] = {}
-                    temp_tid[item[2]][item[0]]['count'] = 1
+                    temp_tid[item[0]][item[2]] = {}
+                    temp_tid[item[0]][item[2]]['count'] = 1
             else:
-                temp_tid[item[2]] = {}
-                temp_tid[item[2]][item[0]] = {}
-                temp_tid[item[2]][item[0]]['count'] = 1
-        for t_id in temp_tid:
-            for protein in temp_tid[t_id]:
-                if temp_tid[t_id][protein]['count'] >= int(hit_param):
-                    filtered_list.append([t_id.strip(), protein])
-        for f_tid in range(len(filtered_list)):
+                temp_tid[item[0]] = {}
+                temp_tid[item[0]][item[2]] = {}
+                temp_tid[item[0]][item[2]]['count'] = 1
+
+        for protein in temp_tid:
+            for t_id in temp_tid[protein]:
+                if temp_tid[protein][t_id]['count'] >= int(hit_param):
+                    print(f"{temp_tid[protein][t_id]['count']} => {hit_param}")
+                    filtered_list.append([protein, t_id.strip()])
+
+        for f_prot in range(len(filtered_list)):
             for a_tid in range(len(at_list)):
-                if filtered_list[f_tid][0].strip() == at_list[a_tid][2].strip():
+                if filtered_list[f_prot][1] == at_list[a_tid][2].strip() and filtered_list[f_prot][0] == at_list[a_tid][0]:
                     at_list[a_tid][2] = at_list[a_tid][2].strip()
                     print("\t".join(at_list[a_tid]))
 
