@@ -1,4 +1,4 @@
-Novel: 326
+Novel: 298
 CryptonV-10_CFl_1p	AC144824.2	Danio rerio
 CryptonV-10_CFl_1p	AL929542.9	Danio rerio
 CryptonV-10_CFl_1p	BX324230.15	Danio rerio
@@ -6,12 +6,10 @@ CryptonV-10_CFl_1p	CP020629.1	Oryzias latipes
 CryptonV-10_CFl_1p	CP020633.1	Oryzias latipes
 CryptonV-10_CFl_1p	CP020666.1	Oryzias latipes
 CryptonV-10_CFl_1p	CP020682.1	Oryzias latipes
-CryptonV-10_CFl_1p	CP027268.1	Lateolabrax maculatus
 CryptonV-10_CFl_1p	CR759946.7	Danio rerio
 CryptonV-10_CFl_1p	CU694252.9	Danio rerio
 CryptonV-10_CFl_1p	CU929234.11	Danio rerio
 CryptonV-10_CFl_1p	FP102122.22	Danio rerio
-CryptonV-10_CFl_1p	LN595275.1	Cyprinus carpio
 CryptonV-10_CFl_1p	LR131962.1	Parambassis ranga
 CryptonV-10_CFl_1p	LR131965.1	Parambassis ranga
 CryptonV-10_CFl_1p	LR131966.1	Parambassis ranga
@@ -33,14 +31,11 @@ CryptonV-10_CFl_1p	LR584238.1	Takifugu rubripes
 CryptonV-10_CFl_1p	LR584244.1	Takifugu rubripes
 CryptonV-10_CFl_1p	LR584246.2	Takifugu rubripes
 CryptonV-10_CFl_1p	LR584248.2	Takifugu rubripes
-CryptonV-10_CFl_1p	LR597445.1	Salarias fasciatus
 CryptonV-10_CFl_1p	LR597461.1	Sphaeramia orbicularis
 CryptonV-10_CFl_1p	LR597465.1	Sphaeramia orbicularis
 CryptonV-10_CFl_1p	LR597466.1	Sphaeramia orbicularis
 CryptonV-10_CFl_1p	LR597467.1	Sphaeramia orbicularis
 CryptonV-10_CFl_1p	LR597475.1	Sphaeramia orbicularis
-CryptonV-10_CFl_1p	LR597551.1	Myripristis murdjan
-CryptonV-10_CFl_1p	LR597558.1	Myripristis murdjan
 CryptonV-10_CFl_1p	LR633950.1	Gadus morhua
 CryptonV-10_CFl_1p	LR633962.1	Gadus morhua
 CryptonV-10_CFl_1p	LR633964.1	Gadus morhua
@@ -53,18 +48,12 @@ CryptonV-11_CFl_1p	CP020633.1	Oryzias latipes
 CryptonV-11_CFl_1p	CP020666.1	Oryzias latipes
 CryptonV-11_CFl_1p	CP020669.1	Oryzias latipes
 CryptonV-11_CFl_1p	CP020682.1	Oryzias latipes
-CryptonV-11_CFl_1p	CP027268.1	Lateolabrax maculatus
-CryptonV-11_CFl_1p	CP032600.1	Lateolabrax maculatus
 CryptonV-11_CFl_1p	CR352215.34	Danio rerio
 CryptonV-11_CFl_1p	CR533430.7	Danio rerio
 CryptonV-11_CFl_1p	CR847803.7	Danio rerio
 CryptonV-11_CFl_1p	CU929234.11	Danio rerio
 CryptonV-11_CFl_1p	FP102122.22	Danio rerio
 CryptonV-11_CFl_1p	HF933211.1	Oryzias latipes
-CryptonV-11_CFl_1p	LN591439.1	Cyprinus carpio
-CryptonV-11_CFl_1p	LN596430.1	Cyprinus carpio
-CryptonV-11_CFl_1p	LN596729.1	Cyprinus carpio
-CryptonV-11_CFl_1p	LN598384.1	Cyprinus carpio
 CryptonV-11_CFl_1p	LR131962.1	Parambassis ranga
 CryptonV-11_CFl_1p	LR131965.1	Parambassis ranga
 CryptonV-11_CFl_1p	LR131966.1	Parambassis ranga
@@ -73,7 +62,6 @@ CryptonV-11_CFl_1p	LR131980.1	Parambassis ranga
 CryptonV-11_CFl_1p	LR131995.1	Gouania willdenowi
 CryptonV-11_CFl_1p	LR132000.1	Gouania willdenowi
 CryptonV-11_CFl_1p	LR132004.1	Gouania willdenowi
-CryptonV-11_CFl_1p	LR132018.2	Betta splendens
 CryptonV-11_CFl_1p	LR132038.1	Anabas testudineus
 CryptonV-11_CFl_1p	LR132042.1	Anabas testudineus
 CryptonV-11_CFl_1p	LR132046.1	Anabas testudineus
@@ -83,8 +71,6 @@ CryptonV-11_CFl_1p	LR132056.1	Anabas testudineus
 CryptonV-11_CFl_1p	LR537122.1	Sparus aurata
 CryptonV-11_CFl_1p	LR537137.1	Sparus aurata
 CryptonV-11_CFl_1p	LR537138.1	Sparus aurata
-CryptonV-11_CFl_1p	LR584248.2	Takifugu rubripes
-CryptonV-11_CFl_1p	LR597445.1	Salarias fasciatus
 CryptonV-11_CFl_1p	LR597461.1	Sphaeramia orbicularis
 CryptonV-11_CFl_1p	LR597466.1	Sphaeramia orbicularis
 CryptonV-11_CFl_1p	LR597469.1	Sphaeramia orbicularis
@@ -116,16 +102,11 @@ CryptonV-12_CFl_1p	LR131980.1	Parambassis ranga
 CryptonV-12_CFl_1p	LR131995.1	Gouania willdenowi
 CryptonV-12_CFl_1p	LR132000.1	Gouania willdenowi
 CryptonV-12_CFl_1p	LR132004.1	Gouania willdenowi
-CryptonV-12_CFl_1p	LR132018.2	Betta splendens
-CryptonV-12_CFl_1p	LR132025.2	Betta splendens
 CryptonV-12_CFl_1p	LR132046.1	Anabas testudineus
 CryptonV-12_CFl_1p	LR132050.1	Anabas testudineus
 CryptonV-12_CFl_1p	LR132052.1	Anabas testudineus
-CryptonV-12_CFl_1p	LR535841.1	Mastacembelus armatus
 CryptonV-12_CFl_1p	LR537122.1	Sparus aurata
 CryptonV-12_CFl_1p	LR537138.1	Sparus aurata
-CryptonV-12_CFl_1p	LR597441.1	Salarias fasciatus
-CryptonV-12_CFl_1p	LR597455.1	Salarias fasciatus
 CryptonV-12_CFl_1p	LR597466.1	Sphaeramia orbicularis
 CryptonV-12_CFl_1p	LR597467.1	Sphaeramia orbicularis
 CryptonV-12_CFl_1p	LR597468.1	Sphaeramia orbicularis
@@ -150,7 +131,6 @@ CryptonV-1_BTa_1p	CP020638.1	Oryzias latipes
 CryptonV-1_BTa_1p	CP020666.1	Oryzias latipes
 CryptonV-1_BTa_1p	CP020669.1	Oryzias latipes
 CryptonV-1_BTa_1p	CP020681.1	Oryzias latipes
-CryptonV-1_BTa_1p	CP027268.1	Lateolabrax maculatus
 CryptonV-1_BTa_1p	CR352215.34	Danio rerio
 CryptonV-1_BTa_1p	CR533430.7	Danio rerio
 CryptonV-1_BTa_1p	CR847803.7	Danio rerio
@@ -176,9 +156,6 @@ CryptonV-1_BTa_1p	LR131980.1	Parambassis ranga
 CryptonV-1_BTa_1p	LR131995.1	Gouania willdenowi
 CryptonV-1_BTa_1p	LR132000.1	Gouania willdenowi
 CryptonV-1_BTa_1p	LR132004.1	Gouania willdenowi
-CryptonV-1_BTa_1p	LR132025.2	Betta splendens
-CryptonV-1_BTa_1p	LR132038.1	Anabas testudineus
-CryptonV-1_BTa_1p	LR132042.1	Anabas testudineus
 CryptonV-1_BTa_1p	LR535842.1	Mastacembelus armatus
 CryptonV-1_BTa_1p	LR537122.1	Sparus aurata
 CryptonV-1_BTa_1p	LR537124.1	Sparus aurata
@@ -239,8 +216,6 @@ CryptonV-1_CFl_1p	LR131965.1	Parambassis ranga
 CryptonV-1_CFl_1p	LR131966.1	Parambassis ranga
 CryptonV-1_CFl_1p	LR131973.1	Parambassis ranga
 CryptonV-1_CFl_1p	LR131980.1	Parambassis ranga
-CryptonV-1_CFl_1p	LR132025.2	Betta splendens
-CryptonV-1_CFl_1p	LR535841.1	Mastacembelus armatus
 CryptonV-1_CFl_1p	LR537122.1	Sparus aurata
 CryptonV-1_CFl_1p	LR537138.1	Sparus aurata
 CryptonV-1_CFl_1p	LR584233.2	Takifugu rubripes
@@ -271,7 +246,6 @@ CryptonV-1_CGi_1p	CP020666.1	Oryzias latipes
 CryptonV-1_CGi_1p	CP020669.1	Oryzias latipes
 CryptonV-1_CGi_1p	CP020682.1	Oryzias latipes
 CryptonV-1_CGi_1p	CP020683.1	Oryzias latipes
-CryptonV-1_CGi_1p	CP032600.1	Lateolabrax maculatus
 CryptonV-1_CGi_1p	CR759946.7	Danio rerio
 CryptonV-1_CGi_1p	CU137725.9	Danio rerio
 CryptonV-1_CGi_1p	CU694252.9	Danio rerio
@@ -290,14 +264,12 @@ CryptonV-1_CGi_1p	LR131965.1	Parambassis ranga
 CryptonV-1_CGi_1p	LR131966.1	Parambassis ranga
 CryptonV-1_CGi_1p	LR131973.1	Parambassis ranga
 CryptonV-1_CGi_1p	LR131980.1	Parambassis ranga
-CryptonV-1_CGi_1p	LR132018.2	Betta splendens
 CryptonV-1_CGi_1p	LR132038.1	Anabas testudineus
 CryptonV-1_CGi_1p	LR132042.1	Anabas testudineus
 CryptonV-1_CGi_1p	LR132046.1	Anabas testudineus
 CryptonV-1_CGi_1p	LR132050.1	Anabas testudineus
 CryptonV-1_CGi_1p	LR132052.1	Anabas testudineus
 CryptonV-1_CGi_1p	LR132056.1	Anabas testudineus
-CryptonV-1_CGi_1p	LR535841.1	Mastacembelus armatus
 CryptonV-1_CGi_1p	LR537121.1	Sparus aurata
 CryptonV-1_CGi_1p	LR537124.1	Sparus aurata
 CryptonV-1_CGi_1p	LR584233.2	Takifugu rubripes
