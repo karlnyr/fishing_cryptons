@@ -219,3 +219,16 @@ CryptonV-1_CGi_1p   Coregonus sp. 'balchen'
 CryptonV-1_CGi_1p   Chanos chanos
 # For instance, CryptonV-1_CGI has 5 or more hits to these 21 species.
 ```
+
+###01-10-19
+To download multiple genomes one can make use of the wget tool to do the following:
+
+```shell
+$ for file in `for file in `cut -f2,13 blast_queries/genome_hits/crypt_v_180919_filt_fmt6 | sort -k2 | uniq | grep 'Takifugu' | cut -f1`; do wget -O ~/genomes/vertebrate/species/$file 'https://www.ncbi.nlm.nih.gov/search/api/sequence/'$file'/?report=fasta'; done
+```
+
+extract fmt6 format by species spec
+
+```shell
+for name in `cut -f1 blast_queries/genome_hits/crypt_v_180919_filt_fmt6 | sort -k1 | uniq`; do awk -F "\t" '$1~/'$name'/ && $13~/Gadus morhua/ {print $0}' blast_queries/genome_hits/crypt_v_180919_filt_fmt6 > blast_queries/crypton_hits/crypt_v/gadus_morhua/$name'_fmt6' ; done
+```
