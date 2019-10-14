@@ -43,4 +43,3 @@ elif [[ $OUT_FMT = '5' ]];
             -out $OUT_FILE_PATH/$OUT_NAME$XML_EXT
     done
 fi
-

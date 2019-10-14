@@ -232,3 +232,23 @@ extract fmt6 format by species spec
 ```shell
 for name in `cut -f1 blast_queries/genome_hits/crypt_v_180919_filt_fmt6 | sort -k1 | uniq`; do awk -F "\t" '$1~/'$name'/ && $13~/Gadus morhua/ {print $0}' blast_queries/genome_hits/crypt_v_180919_filt_fmt6 > blast_queries/crypton_hits/crypt_v/gadus_morhua/$name'_fmt6' ; done
 ```
+
+### 14-10-19
+trying to group sequences by simularity. using a cut-off at 95% simularity to group the two
+
+```python
+from Bio import AlignIO
+from Bio.Phylo.TreeConstruction import DistanceCalculator
+
+calculator = DistanceCalculator('identity')
+dm = calculator.get_distance(align)
+
+align = AlignIO.read('input.fasta', 'fasta')
+
+for item in range(len(dm.matrix)):
+     for perc in range(len(dm.matrix[item])):
+             if dm.matrix[item][perc] <= 0.05:
+                     print(dm.matrix[item][perc])
+                     print(dm.names[item])
+```
+might have to alter this cut-of. 95% yields a very small amount of sequences, and we ned at least 3 for a consensus to be made. 
