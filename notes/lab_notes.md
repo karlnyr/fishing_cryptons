@@ -252,3 +252,4 @@ for item in range(len(dm.matrix)):
                      print(dm.names[item])
 ```
 might have to alter this cut-of. 95% yields a very small amount of sequences, and we ned at least 3 for a consensus to be made. 
+

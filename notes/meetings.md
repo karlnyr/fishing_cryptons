@@ -20,3 +20,6 @@ to reverse sequences in bioedit you can put \_R\_ in front of the sequence to pu
 keep the unused sequences in a separate folder, use the spread sheet to annotate how many unsused ones there were. 
 
 Seems that the results are comming back to be same same hits in the genome. Thus I will start by making one consensus sequence for the crypton with the most hits in each species
+
+### 18-10-19
+extract more flanks, get the consensus' done, make phyla tree (raxml) on amino acid level, get some crypton H sequences, include V's and, two or three from every other group. dotplots and maybe a phylogeny of the species that we found new ones in. Make a schematic figure of a well annotated crypton V. See if I can find a metazoan tree to use for the "we found em here" 
