@@ -7,7 +7,7 @@ from collections import defaultdict
 
 '''Will group alignment entries by their percentage identity. Returns a report of
 what sequences are to be grouped together by the user percentage cut of.
-python3 <script.py> <input_file.fasta> <percentage_id_cutof>'''
+python3 <script.py> <input_file.fasta> <percentage_id_cutof> <minimum_alignment_length'''
 
 current_wd = os.getcwd()
 
@@ -61,18 +61,6 @@ def same_sequences(bh_1, bh_2):
         False
 
 
-def remove_blast_hit(blast_list, blast_hit):
-    '''loop throug the list, finds the element that is to be replaced and returns
-    a new list without the old blast hit'''
-    out_list = []
-    for item in range(len(blast_list)):
-        if not same_sequences(blast_list[item], blast_hit):
-            out_list.append(blast_list[item])
-        elif same_sequences(blast_list[item], blast_hit):
-            out_list.append(blast_hit)
-    return blast_list
-
-
 def seq_check(blast_hit, shortest_aln_allowed, perc_id_cutof):
     '''return true or fasle if statements are correct'''
     if blast_hit.length >= shortest_aln_allowed and blast_hit.query != blast_hit.subject and blast_hit.perc_id >= perc_id_cutof:
@@ -96,16 +84,17 @@ def filter_blast(aln, shortest_aln_allowed, perc_id_cutof):
     for alignment in aln:
         split_aln = alignment.split('\t')
         blast_item = blast_hit(split_aln[0], split_aln[1], split_aln[2], split_aln[3])
-        if not list_init and seq_check(blast_item, shortest_aln_allowed, perc_id_cutof):
-            out_list.append(blast_item)
-            list_init = 1
-        elif list_init and seq_check(blast_item, shortest_aln_allowed, perc_id_cutof):
-            for app_item in out_list:
-                if same_sequences(blast_item, app_item):
-                    if blast_item.length > app_item.length:
-                        out_list = remove_blast_hit(out_list, blast_item)
-                else:
-                    out_list.append(blast_item)
+        if seq_check(blast_item, shortest_aln_allowed, perc_id_cutof):
+            if not list_init:
+                out_list.append(blast_item)
+                list_init = 1
+            elif list_init:
+                for app_item in out_list:
+                    if not same_sequences(blast_item, app_item):
+                        out_list.append(blast_item)
+                    else:
+                        if blast_item.length > app_item.length:
+                            app_item = blast_item
     return out_list
 
 
