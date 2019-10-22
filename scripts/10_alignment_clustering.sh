@@ -17,6 +17,6 @@ MIN_LENGTH=$3
 
 for file in $FILE_PATH;
     do
-        python3 $SCRIPT_PATH $FILE_PATH $PERC_CUTOF $MIN_LENGTH \
+        python3 $SCRIPT_PATH $file $PERC_CUTOF $MIN_LENGTH \
         > $FILE_PATH'_clustering'
 done
