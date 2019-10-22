@@ -11,9 +11,12 @@ module load biopython/1.73-py3
 module load blast/2.9.0+
 
 SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/09_alignment_grouping.py'
-
-FILE_PATH=$1
+FILE_PATH='/home/karlnyr/research_training_19/alignments/'*'/02'*'/'*
 PERC_CUTOF=$2
 MIN_LENGTH=$3
 
-python3 $SCRIPT_PATH $FILE_PATH $PERC_CUTOF $MIN_LENGTH > $FILE_PATH'_clustering'
+for file in $FILE_PATH;
+    do
+        python3 $SCRIPT_PATH $FILE_PATH $PERC_CUTOF $MIN_LENGTH \
+        > $FILE_PATH'_clustering'
+done

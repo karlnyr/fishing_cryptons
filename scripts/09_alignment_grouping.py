@@ -26,6 +26,9 @@ class blast_hit():
         '''Returns a touple made from query and subject in blast_hit object'''
         return {self.query, self.subject}
 
+    def __str__(self):
+        return f"{self.query}-{self.subject}: {self.length}"
+
 
 def parse_n_blastn(fasta_file, cwd):
     '''Used to parse the alignment fasta file, removing any "-" occured in the
@@ -71,7 +74,7 @@ def seq_check(blast_hit, shortest_aln_allowed, perc_id_cutof):
 
 def id_match(name_set, blast_hit):
     '''Checks if any id in query or subject matches between two blast_hit objects'''
-    if name_set & blast_hit.tuple_set():
+    if name_set & blast_hit:
         return True
     else:
         return False
@@ -79,76 +82,99 @@ def id_match(name_set, blast_hit):
 
 def filter_blast(aln, shortest_aln_allowed, perc_id_cutof):
     '''Filter blast output, will return a non-redundant list where length is '''
-    out_list = []
+    working_list = []
     list_init = 0
     for alignment in aln:
         split_aln = alignment.split('\t')
         blast_item = blast_hit(split_aln[0], split_aln[1], split_aln[2], split_aln[3])
         if seq_check(blast_item, shortest_aln_allowed, perc_id_cutof):
             if not list_init:
-                out_list.append(blast_item)
+                working_list.append(blast_item)
                 list_init = 1
             elif list_init:
-                for app_item in out_list:
-                    if not same_sequences(blast_item, app_item):
-                        out_list.append(blast_item)
-                    else:
-                        if blast_item.length > app_item.length:
-                            app_item = blast_item
+                exist = 0
+                indx = 0
+                for i in range(len(working_list)):
+                    if blast_item.tuple_set() == working_list[i].tuple_set():
+                        exist = 1
+                        indx = i
+                if exist and blast_item.length > working_list[i].length:
+                    working_list.pop(indx)
+                    working_list.insert(indx, blast_item)
+                else:
+                    working_list.append(blast_item)
+
+    out_list = []
+    for item in working_list:
+        out_list.append(item.tuple_set())
     return out_list
 
 
 def messy_clustering(bh_list):
     '''Loop over a list of blast hit object, group them together as long as there are combinations to do'''
-    not_changing = False
+    changing = False
     out_list = []
-    print('starting messy cluster')
-    while not not_changing:
-        not_changing = True
-        list_init = 0
-        for bh_item in bh_list:
-            if not list_init:
-                out_list.append(bh_item.tuple_set())
-                not_changing = False
-                list_init = 1
-            elif list_init:
-                for item_set in out_list:
-                    if id_match(item_set, bh_item):
-                        item_set = item_set | bh_item.tuple_set()
-                        not_changing = False
-
-        inner_list_changing = False
-        scrambled_list = []
-        while not inner_list_changing:
-            inner_list_changing = True
-            for i in range(len(out_list)):
-                working_set = {}
-                for j in range(len(out_list)):
-                    if out_list[i] != out_list[j]:
-                        if out_list[i] & out_list[j]:
-                            working_set = working_set | out_list[i] | out_list[j]
-                if not len(scrambled_list):
-                    scrambled_list.append(working_set)
-                    inner_list_changing = False
+    list_init = 0
+    counter = 1
+    while not changing:
+        changing = True
+        before = len(out_list)
+        if not list_init:
+            for bh_item in bh_list:
+                if not list_init:
+                    out_list.append(bh_item)
+                    list_init = 1
+                elif list_init:
+                    for i in range(len(out_list)):
+                        if out_list[i] & bh_item:
+                            union = out_list[i] | bh_item
+                            out_list.pop(i)
+                            out_list.insert(i, union)
+                        else:
+                            out_list.append(bh_item)
+        elif list_init:
+            working_list = []
+            for item in out_list:
+                if not len(working_list):
+                    print('Initializing new list')
+                    working_list.append(item)
                 else:
-                    for item in scrambled_list:
-                        if item != working_set and item & working_set:
-                            item = item | working_set
-                            inner_list_changing = False
-                        elif item != working_set:
-                            scrambled_list.append(working_set)
-                            inner_list_changing = False
+                    a_match = 0
+                    for i in range(len(working_list)):
+                        if working_list[i] & item:
+                            union = working_list[i] | item
+                            working_list.pop(i)
+                            working_list.insert(i, union)
+                            a_match = 1
+                    if not a_match:
+                        working_list.append(item)
+            out_list = working_list
+        after = len(out_list)
 
-        out_list = scrambled_list
+        print(f'\nbefore: {before}\nafter: {after}\n')
 
+        if after == before:
+            for i in range(after):
+                print(working_list[i], out_list[i])
+                if working_list[i] != out_list[i]:
+                    changing = False
+        elif after != before:
+            changing = False
     return out_list
 
 
 def main(alignment_file, perc_id_cutof, shortest_aln_allowed):
     aln = parse_n_blastn(alignment_file, current_wd)
     filtered_aln = filter_blast(aln, shortest_aln_allowed, perc_id_cutof)
-    output = messy_clustering(filter_blast)
-    print(output)
+    output = messy_clustering(filtered_aln)
+    cluster_count = 1
+    for item in output:
+        tmp = list(item)
+        if len(tmp) >= 3:
+            print(f"cluster {cluster_count}:")
+            for i in tmp:
+                print(i)
+            cluster_count += 1
 
 
-main(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
+main(sys.argv[1], float(sys.argv[2]), int(sys.argv[3]))
