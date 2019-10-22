@@ -9,8 +9,6 @@ from collections import defaultdict
 what sequences are to be grouped together by the user percentage cut of.
 python3 <script.py> <input_file.fasta> <percentage_id_cutof> <minimum_alignment_length>'''
 
-current_wd = os.getcwd()
-
 
 class blast_hit():
     '''Class to handle the blast outputs regarding the parameters in question'''
@@ -30,7 +28,7 @@ class blast_hit():
         return f"{self.query}-{self.subject}: {self.length}"
 
 
-def parse_n_blastn(fasta_file, cwd):
+def parse_n_blastn(fasta_file):
     '''Used to parse the alignment fasta file, removing any "-" occured in the
     alignment and creates an database to be used in the blastn'''
     seq_handle = SeqIO.parse(fasta_file, 'fasta')
@@ -39,7 +37,7 @@ def parse_n_blastn(fasta_file, cwd):
             if 'Ambiguous_orientation' in record.name:
                 record.name = record.name.replace('Ambiguous_orientation', 'A_O')
             temp_f1.write(f'>{record.name}\n{str(record.seq).replace("-","")}\n')
-            sp.run(f'cp {current_wd}/{fasta_file}_1_tmp {current_wd}/{fasta_file}_2_tmp', shell=True)
+            sp.run(f'cp {fasta_file}_1_tmp {fasta_file}_2_tmp', shell=True)
 
     sp.run(f'makeblastdb -in {fasta_file}_1_tmp -dbtype nucl -parse_seqids -blastdb_version 5', shell=True)
     print("\n------Temporary database set up------\n")
@@ -160,7 +158,7 @@ def messy_clustering(bh_list):
 
 
 def main(alignment_file, perc_id_cutof, shortest_aln_allowed):
-    aln = parse_n_blastn(alignment_file, current_wd)
+    aln = parse_n_blastn(alignment_file)
     filtered_aln = filter_blast(aln, shortest_aln_allowed, perc_id_cutof)
     output = messy_clustering(filtered_aln)
     cluster_count = 1
