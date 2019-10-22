@@ -12,8 +12,8 @@ module load blast/2.9.0+
 
 SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/09_alignment_grouping.py'
 FILE_PATH='/home/karlnyr/research_training_19/alignments/*/02*/*'
-PERC_CUTOF=$2
-MIN_LENGTH=$3
+PERC_CUTOF=$1
+MIN_LENGTH=$2
 
 for file in $FILE_PATH;
     do
