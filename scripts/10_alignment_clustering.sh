@@ -10,7 +10,7 @@ module load bioinfo-tools
 module load biopython/1.73-py3
 module load blast/2.9.0+
 
-SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/10_alignment_clustering.sh'
+SCRIPT_PATH='/home/karlnyr/research_training_19/scripts/09_alignment_grouping.py'
 FILE_PATH=$1
 PERC_CUTOF=$2
 MIN_LENGTH=$3
