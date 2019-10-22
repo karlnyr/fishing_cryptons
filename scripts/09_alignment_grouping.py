@@ -136,7 +136,6 @@ def messy_clustering(bh_list):
             working_list = []
             for item in out_list:
                 if not len(working_list):
-                    print('Initializing new list')
                     working_list.append(item)
                 else:
                     a_match = 0
@@ -151,11 +150,8 @@ def messy_clustering(bh_list):
             out_list = working_list
         after = len(out_list)
 
-        print(f'\nbefore: {before}\nafter: {after}\n')
-
         if after == before:
             for i in range(after):
-                print(working_list[i], out_list[i])
                 if working_list[i] != out_list[i]:
                     changing = False
         elif after != before:
@@ -168,6 +164,7 @@ def main(alignment_file, perc_id_cutof, shortest_aln_allowed):
     filtered_aln = filter_blast(aln, shortest_aln_allowed, perc_id_cutof)
     output = messy_clustering(filtered_aln)
     cluster_count = 1
+    print(f'The following clusters was identified with {perc_id_cutof}% identity and minimum alignment length of {shortest_aln_allowed}')
     for item in output:
         tmp = list(item)
         if len(tmp) >= 3:

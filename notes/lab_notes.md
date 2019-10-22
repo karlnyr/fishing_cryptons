@@ -253,3 +253,9 @@ for item in range(len(dm.matrix)):
 ```
 might have to alter this cut-of. 95% yields a very small amount of sequences, and we ned at least 3 for a consensus to be made. 
 
+### 22-10-19
+common mafft online profile that could be used for commandline one day is shown below:
+
+```shell
+$ mafft --thread 8 --threadtb 5 --threadit 0 --reorder --adjustdirection --anysymbol --auto input > output
+```
