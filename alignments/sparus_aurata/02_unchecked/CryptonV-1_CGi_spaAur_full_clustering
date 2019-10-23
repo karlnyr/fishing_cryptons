@@ -1,0 +1,22 @@
+
+
+Building a new DB, current time: 10/23/2019 12:02:09
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/sparus_aurata/02_unchecked/CryptonV-1_CGi_spaAur_full_1_tmp
+New DB title:  alignments/sparus_aurata/02_unchecked/CryptonV-1_CGi_spaAur_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 13 sequences in 0.00184083 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+LR537121.1_125981-126124
+LR537124.1_33018249-33018838_A_O_RC
+LR537124.1_4276468-4277417_A_O_RC
+LR537124.1_32990863-32991812_A_O_RC
+LR537124.1_13515923-13516872_A_O
+LR537121.1_176797-177479_A_O_RC

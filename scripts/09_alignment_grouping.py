@@ -179,7 +179,7 @@ def main(alignment_file, perc_id_cutof, shortest_aln_allowed):
     filtered_aln = filter_blast(aln, shortest_aln_allowed, perc_id_cutof)
     too_long = True
     while too_long:
-        if len(filtered_aln) > 40:  # Needs to be chunked and every chunk then processed seperately
+        if len(filtered_aln) > 20:  # Needs to be chunked and every chunk then processed seperately
             bh_chunks = chunkIt(filtered_aln)
             partition_aln = []
             for item in bh_chunks:

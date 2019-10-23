@@ -1,0 +1,28 @@
+
+
+Building a new DB, current time: 10/23/2019 11:58:47
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/oryzias_latipes/02_unchecked/CryptonV-1_CGi_oryLat_full_1_tmp
+New DB title:  alignments/oryzias_latipes/02_unchecked/CryptonV-1_CGi_oryLat_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 28 sequences in 0.00304508 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+CP020683.1_13090614-13092239
+CP020633.1_6971350-6972975
+CP020625.1_34383992-34385617
+CP020625.1_26184652-26186277
+CP020641.1_30508606-30510231
+CP020666.1_17734248-17735873_A_O
+cluster 2:
+HF933211.1_4511579-4513270_RC
+CP020669.1_6057389-6059080_RC
+CP020633.1_9581103-9582827
+CP020666.1_8109818-8111509_RC
+CP020625.1_5835438-5837134
