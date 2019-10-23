@@ -1,9 +1,14 @@
 
 
-Building a new DB, current time: 10/22/2019 23:18:21
-New DB name:   /home/karlnyr/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
-New DB title:  /home/karlnyr/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
+Building a new DB, current time: 10/23/2019 10:29:37
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
+New DB title:  alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
 Sequence type: Nucleotide
 Keep MBits: T
 Maximum file size: 1000000000B
-Adding sequences from FASTA; added 41 sequences in 0.0157859 seconds.
+Adding sequences from FASTA; added 41 sequences in 0.00489116 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+

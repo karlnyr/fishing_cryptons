@@ -259,3 +259,11 @@ common mafft online profile that could be used for commandline one day is shown 
 ```shell
 $ mafft --thread 8 --threadtb 5 --threadit 0 --reorder --adjustdirection --anysymbol --auto input > output
 ```
+
+### 23-10-19
+
+RaxMl reference:  "RAxML Version 8: A tool for Phylogenetic Analysis and Post-Analysis of Large Phylogenies". In Bioinformatics, 2014, open access.
+
+CryptonH - found in Danio Rerio(zebrafish) and is a YR encoding DNA transposon. distantly related to Crypton-V, and is distributed amoun anomals such as fish cnidarians. Will be used to get a close relationship to the CryptonV.
+
+CryptonV do in some cases leave TSD, CryptonV-1_DR leaves 11bp TIRs, but a few of them tend to insert into TG microsatellites.
