@@ -1,0 +1,23 @@
+
+
+Building a new DB, current time: 10/22/2019 23:18:20
+New DB name:   /home/karlnyr/research_training_19/alignments/danio_rerio/02_unchecked/CryptonV-1_CGi_danRer_full_1_tmp
+New DB title:  /home/karlnyr/research_training_19/alignments/danio_rerio/02_unchecked/CryptonV-1_CGi_danRer_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 11 sequences in 0.0150149 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+BX005098.11_97874-99556
+CU137725.9_58292-59974
+AL831726.11_138509-140191
+CR759946.7_8140-9822_RC
+BX322568.13_123391-125073_RC
+BX649516.8_165343-167025
+CU694252.9_6833-8515_RC

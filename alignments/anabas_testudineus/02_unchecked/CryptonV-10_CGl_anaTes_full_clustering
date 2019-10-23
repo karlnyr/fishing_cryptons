@@ -1,0 +1,15 @@
+
+
+Building a new DB, current time: 10/22/2019 23:18:17
+New DB name:   /home/karlnyr/research_training_19/alignments/anabas_testudineus/02_unchecked/CryptonV-10_CGl_anaTes_full_1_tmp
+New DB title:  /home/karlnyr/research_training_19/alignments/anabas_testudineus/02_unchecked/CryptonV-10_CGl_anaTes_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 8 sequences in 0.0337291 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500

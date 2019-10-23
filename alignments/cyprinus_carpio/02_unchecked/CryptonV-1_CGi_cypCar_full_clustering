@@ -1,0 +1,19 @@
+
+
+Building a new DB, current time: 10/22/2019 23:18:19
+New DB name:   /home/karlnyr/research_training_19/alignments/cyprinus_carpio/02_unchecked/CryptonV-1_CGi_cypCar_full_1_tmp
+New DB title:  /home/karlnyr/research_training_19/alignments/cyprinus_carpio/02_unchecked/CryptonV-1_CGi_cypCar_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 10 sequences in 0.0117011 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+LN591542.1_300682-302304_RC
+LN598384.1_93433-95091
+LN591542.1_166950-168629_RC
