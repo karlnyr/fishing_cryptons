@@ -15,7 +15,7 @@ my $ASSEMBLY = $ARGV[1];
 my $OUTFILE = $ARGV[2];
 #my $LISTOFSP = $ARGV[3];	#Needed for extracting blast hits
 
-my $flank = ARGV[3];
+my $flank = $ARGV[3];
 my $maxhitdist = 10000;
 my $frac = 0.8;
 
