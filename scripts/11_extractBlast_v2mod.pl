@@ -3,29 +3,29 @@
 
 use strict;
 use warnings;
-use List::Util qw(max min);	#Loading the math modules "max" and "min" 
+use List::Util qw(max min);	#Loading the math modules "max" and "min"
 
-# Input parameters 
+# Input parameters
 # If you want to have more parameters, just add more lines,
 # starting with "my" and $some_name=$ARGV[next number];
-# Note that the when you run the script you need to input the 
-# files in exactly this order. 
+# Note that the when you run the script you need to input the
+# files in exactly this order.
 my $BLASTLIST = $ARGV[0];
 my $ASSEMBLY = $ARGV[1];
 my $OUTFILE = $ARGV[2];
 #my $LISTOFSP = $ARGV[3];	#Needed for extracting blast hits
 
-my $flank = 500;
+my $flank = ARGV[3];
 my $maxhitdist = 10000;
 my $frac = 0.8;
 
 #Make a hash of the sequences
-my %seqHash = ();		
+my %seqHash = ();
 
 #Make file handle for output file
 open(OUT, ">".$OUTFILE);
 
-#Save the ONLY 
+#Save the ONLY
 my $tempNames = "tempNames.out";
 system("cut -f2 $BLASTLIST |uniq >$tempNames");
 
@@ -41,7 +41,7 @@ close(IN);
 # This part is just for making it possible to input a
 # zipped file (checks if the file ends with ".gz")
 #if ($ASSEMBLY =~ /\.gz$/) {
-#	open(FILE, "zcat $ASSEMBLY |"); 
+#	open(FILE, "zcat $ASSEMBLY |");
 #}
 # If the file isn't compressed (default way of opening file handle)
 #else {
@@ -69,7 +69,7 @@ while(<FILE>) {		#The <> means that we read one line at the time
 				$seq.= $next;
 				if(eof(FILE)) {
 					last;
-				}	
+				}
 				$next = <FILE>;
 			}
 			seek(FILE, -length($next), 1);
@@ -84,13 +84,13 @@ close(IN);
 print "...Done!\n";
 
 #Close the file handle
-close(FILE);	
+close(FILE);
 
 print "Going through the hits...\n";
 open(IN, $tempNames);
 while(<IN>) {
 	chomp($_);
-	
+
 	my $tempRows = "temp.out";
 
 	system("awk '(\$2==\"$_\"){print}' $BLASTLIST |cut -f1,2,9,10 |sort -k3n >$tempRows");
@@ -146,15 +146,15 @@ while(<IN>) {
 				#(In Blast output the spaces are replaced by "#", we want to remove
 				#any spaces and what comes after it, therefore we split on "#" and
 				#save only what preceeds it)
-				
-				
+
+
 				#Check that a majority of the hits has the same direction
 				if(max($plus, $minus)/($plus+$minus) < $frac) {
 					print STDERR "Ambiguous orientation of blast hits for ".$fullName.": ".$plus." +, ".$minus." -\n";
 					$suffix = "_Ambiguous_orientation";
-				} 
+				}
 
-			
+
 				#define sequence
 				my $sequence = $seqHash{$fullName};
 
@@ -166,12 +166,12 @@ while(<IN>) {
 					$substr=&revComp($substr);
 					$compl="_RC";
 				}
-				
-			
+
+
 				print OUT ">".$fullName."_".$start."-".$stop.$suffix.$compl."\n".$substr;
 				$suffix="";
 				$compl="";
-			
+
 				#Save this line:
 				($head, $fullName, $start, $stop) = split(/\s+/, $line);
 				if($stop>$start) {
@@ -183,7 +183,7 @@ while(<IN>) {
 					$start=$stop;
 					$stop=$temp;
 				}
-				
+
 			}
 		}
 		$cnt++;
@@ -192,7 +192,7 @@ while(<IN>) {
 	if(max($plus, $minus)/($plus+$minus) < $frac) {
 		print STDERR "Ambiguous orientation of blast hits for ".$fullName.": ".$plus." +, ".$minus." -\n";
 		$suffix = "_Ambiguous_orientation";
-	} 
+	}
 	my $sequence = $seqHash{$fullName};
 	my $substr = &extractFromFasta($start-$flank,$stop+$flank,$sequence);
 	if($minus>$plus) {
@@ -212,18 +212,18 @@ print "...Done!\n";
 # I copied this code from the "extractFromFasta" script
 # and modified it a bit.
 sub extractFromFasta {
-		
-	my $start = shift;		
-	my $end = shift;	
+
+	my $start = shift;
+	my $end = shift;
 	my $seq = shift;
-	
+
 #	 print "DEBUG: Inside subroutine!\n";		#Uncomment this line for display
 
 	my $noOfBases = $end-$start+1;
 	my $rowlength = 80;		#How many bases per row
 
 
-	
+
 	# "substr" is a function which is pre-defined in perl
 	my $substr = substr($seq, $start-1, $noOfBases);
 	my @seqParts = split(/(.{$rowlength})/, $substr);
@@ -235,12 +235,12 @@ sub extractFromFasta {
 	}
 
 	return $substr2;
-	
+
 }
 
 # REVERSE COMPLEMENT A SEQUENCE
 sub revComp {
-	
+
 	my $DNAstring = shift;
 
 	$DNAstring =~ s/\n//g;
@@ -263,7 +263,7 @@ sub revComp {
 
 	return $substr2;
 }
-	
+
 
 
 
