@@ -1,6 +1,7 @@
 import sys
 import os
 import subprocess as sp
+import math
 from Bio import SeqIO
 from Bio.Blast.Applications import NcbiblastnCommandline
 from collections import defaultdict
@@ -41,9 +42,8 @@ def parse_n_blastn(fasta_file):
 
     sp.run(f'makeblastdb -in {fasta_file}_1_tmp -dbtype nucl -parse_seqids -blastdb_version 5', shell=True)
     print("\n------Temporary database set up------\n")
-    # Running blastn
-    blastn_cline = NcbiblastnCommandline(query=f"{fasta_file}_2_tmp", db=f"{fasta_file}_1_tmp", outfmt=6)
-    aln = blastn_cline()[0].split('\n')
+    std_out = sp.run(f'blastn -query {fasta_file}_2_tmp -db {fasta_file}_1_tmp -outfmt=6 -num_threads=3', shell=True, capture_output=True, text=True).stdout
+    aln = std_out.split('\n')
     del aln[-1]
     sp.run(f'rm {fasta_file}_*_tmp*', shell=True)
     print("------BLASTn done. Removing tmp files and database------\n")
@@ -108,6 +108,23 @@ def filter_blast(aln, shortest_aln_allowed, perc_id_cutof):
     return out_list
 
 
+def chunkIt(bh_list):
+    '''returns list chunks to process, will reduce workload, I think?'''
+    nominator = len(bh_list)
+    denominator = 2
+    fragment_length = nominator / denominator
+    corr_len = False
+
+    while not corr_len:
+        if math.floor(fragment_length) > 40:
+            denominator += 1
+            fragment_length = nominator / denominator
+        else:
+            corr_len = True
+
+    return [bh_list[i::denominator] for i in range(denominator)]
+
+
 def messy_clustering(bh_list):
     '''Loop over a list of blast hit object, group them together as long as there are combinations to do'''
     changing = False
@@ -160,16 +177,29 @@ def messy_clustering(bh_list):
 def main(alignment_file, perc_id_cutof, shortest_aln_allowed):
     aln = parse_n_blastn(alignment_file)
     filtered_aln = filter_blast(aln, shortest_aln_allowed, perc_id_cutof)
-    output = messy_clustering(filtered_aln)
-    cluster_count = 1
-    print(f'The following clusters was identified with {perc_id_cutof}% identity and minimum alignment length of {shortest_aln_allowed}')
-    for item in output:
-        tmp = list(item)
-        if len(tmp) >= 3:
-            print(f"cluster {cluster_count}:")
-            for i in tmp:
-                print(i)
-            cluster_count += 1
+    too_long = True
+    while too_long:
+        if len(filtered_aln) > 20:  # Needs to be chunked and every chunk then processed seperately
+            bh_chunks = chunkIt(filtered_aln)
+            partition_aln = []
+            for item in bh_chunks:
+                part_cluster = messy_clustering(item)
+                for bh_set in part_cluster:
+                    partition_aln.append(bh_set)
+            filtered_aln = partition_aln
+        elif len(filtered_aln) < 40:
+            too_long = False
+    if not too_long:
+        output = messy_clustering(filtered_aln)
+        cluster_count = 1
+        print(f'The following clusters was identified with {perc_id_cutof}% identity and minimum alignment length of {shortest_aln_allowed}')
+        for item in output:
+            tmp = list(item)
+            if len(tmp) >= 3:
+                print(f"cluster {cluster_count}:")
+                for i in tmp:
+                    print(i)
+                cluster_count += 1
 
 
 main(sys.argv[1], float(sys.argv[2]), int(sys.argv[3]))

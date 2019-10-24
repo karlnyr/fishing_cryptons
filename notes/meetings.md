@@ -23,3 +23,4 @@ Seems that the results are comming back to be same same hits in the genome. Thus
 
 ### 18-10-19
 extract more flanks, get the consensus' done, make phyla tree (raxml) on amino acid level, get some crypton H sequences, include V's and, two or three from every other group. dotplots and maybe a phylogeny of the species that we found new ones in. Make a schematic figure of a well annotated crypton V. See if I can find a metazoan tree to use for the "we found em here" 
+

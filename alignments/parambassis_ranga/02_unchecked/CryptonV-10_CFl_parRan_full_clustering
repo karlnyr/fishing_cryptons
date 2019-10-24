@@ -1,0 +1,21 @@
+
+
+Building a new DB, current time: 10/23/2019 11:59:46
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/parambassis_ranga/02_unchecked/CryptonV-10_CFl_parRan_full_1_tmp
+New DB title:  alignments/parambassis_ranga/02_unchecked/CryptonV-10_CFl_parRan_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 10 sequences in 0.00163603 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+_R_LR131966.1_12128-13621
+_R_LR131980.1_1826498-1827991_RC
+_R_LR131962.1_1870597-1872090_RC
+_R_LR131973.1_8323383-8324876_RC
+_R_LR131965.1_3235866-3237359_RC

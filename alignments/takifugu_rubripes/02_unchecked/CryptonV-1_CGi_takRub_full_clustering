@@ -1,0 +1,27 @@
+
+
+Building a new DB, current time: 10/23/2019 12:03:38
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/takifugu_rubripes/02_unchecked/CryptonV-1_CGi_takRub_full_1_tmp
+New DB title:  alignments/takifugu_rubripes/02_unchecked/CryptonV-1_CGi_takRub_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 12 sequences in 0.00165987 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+LR584233.2_1031654-1031815_A_O
+LR584233.2_138416-138577_RC
+LR584233.2_106801-106962_RC
+LR584233.2_75205-75366_RC
+cluster 2:
+LR584247.1_7257867-7259576
+LR584244.1_11818311-11820167_RC
+LR584246.2_10977303-10979159_RC
+LR584238.1_10471471-10473327_RC
+_R_LR584233.2_12120803-12122659_A_O
+LR584249.2_7633062-7634771

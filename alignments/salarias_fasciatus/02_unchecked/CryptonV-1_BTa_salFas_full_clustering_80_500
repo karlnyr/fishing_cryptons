@@ -1,0 +1,15 @@
+
+
+Building a new DB, current time: 10/23/2019 12:00:39
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/salarias_fasciatus/02_unchecked/CryptonV-1_BTa_salFas_full_1_tmp
+New DB title:  alignments/salarias_fasciatus/02_unchecked/CryptonV-1_BTa_salFas_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 6 sequences in 0.00100112 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 80.0% identity and minimum alignment length of 500

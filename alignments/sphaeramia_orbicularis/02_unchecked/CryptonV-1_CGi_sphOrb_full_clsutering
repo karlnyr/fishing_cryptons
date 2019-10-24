@@ -1,0 +1,24 @@
+
+
+Building a new DB, current time: 10/23/2019 12:02:56
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/sphaeramia_orbicularis/02_unchecked/CryptonV-1_CGi_sphOrb_full_1_tmp
+New DB title:  alignments/sphaeramia_orbicularis/02_unchecked/CryptonV-1_CGi_sphOrb_full_1_tmp
+Sequence type: Nucleotide
+Keep MBits: T
+Maximum file size: 1000000000B
+Adding sequences from FASTA; added 20 sequences in 0.00222301 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+_R_LR597463.1_57481653-57483260
+LR597462.1_38680521-38682128_RC
+LR597466.1_35898911-35900518_A_O
+LR597459.1_25538738-25540345
+cluster 2:
+LR597466.1_47088433-47089936_RC
+LR597465.1_54931050-54932711_RC
+LR597466.1_47043246-47044899_A_O_RC

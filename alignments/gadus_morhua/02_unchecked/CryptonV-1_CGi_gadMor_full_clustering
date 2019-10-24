@@ -1,9 +1,41 @@
 
 
-Building a new DB, current time: 10/22/2019 23:18:21
-New DB name:   /home/karlnyr/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
-New DB title:  /home/karlnyr/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
+Building a new DB, current time: 10/23/2019 11:51:23
+New DB name:   /home/kalle/RESEARCH_BASE/research_training_19/alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
+New DB title:  alignments/gadus_morhua/02_unchecked/CryptonV-1_CGi_gadMor_full_1_tmp
 Sequence type: Nucleotide
 Keep MBits: T
 Maximum file size: 1000000000B
-Adding sequences from FASTA; added 41 sequences in 0.0157859 seconds.
+Adding sequences from FASTA; added 41 sequences in 0.0067091 seconds.
+
+------Temporary database set up------
+
+------BLASTn done. Removing tmp files and database------
+
+The following clusters was identified with 95.0% identity and minimum alignment length of 500
+cluster 1:
+_R_LR633955.1_27584896-27586500_A_O
+LR633948.1_24357299-24358914_A_O_RC
+LR633955.1_27529328-27530908_A_O_RC
+cluster 2:
+LR633953.1_251775-253493
+LR633956.1_23523213-23524931_RC
+_R_LR633949.1_6965469-6967187_A_O
+LR633950.1_12096353-12098071
+LR633961.1_4642519-4644237
+cluster 3:
+_R_LR633944.1_14419469-14421112
+LR633944.1_14799886-14812415
+LR633951.1_19552819-19554366
+cluster 4:
+_R_LR633949.1_7029002-7030339_A_O
+LR633950.1_22851494-22853113
+LR633950.1_12064724-12065136
+cluster 5:
+LR633944.1_13799820-13801544
+_R_LR633951.1_24957910-24959634_A_O
+_R_LR633948.1_27575257-27576981_A_O_RC
+cluster 6:
+LR633961.1_101746-103581
+_R_LR633950.1_26167386-26169221_A_O
+_R_LR633961.1_4137017-4142937
