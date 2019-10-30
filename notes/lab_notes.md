@@ -267,3 +267,8 @@ RaxMl reference:  "RAxML Version 8: A tool for Phylogenetic Analysis and Post-An
 CryptonH - found in Danio Rerio(zebrafish) and is a YR encoding DNA transposon. distantly related to Crypton-V, and is distributed amoun anomals such as fish cnidarians. Will be used to get a close relationship to the CryptonV.
 
 CryptonV do in some cases leave TSD, CryptonV-1_DR leaves 11bp TIRs, but a few of them tend to insert into TG microsatellites.
+
+### 25-09-19
+animalia phylogeny from: https://www.annualreviews.org/doi/10.1146/annurev-ecolsys-120213-091627
+
+fish phylogeny picture from: https://www.pnas.org/content/115/24/6249/tab-figures-data
