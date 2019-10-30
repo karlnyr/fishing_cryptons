@@ -13,7 +13,7 @@ module load raxml/8.2.10-gcc-mpi
 
 ALIGNMENT_FILE_PATH=$1
 OUTFILE_PATH=$2
-MODEL='PROTGAMMAF'
+MODEL='PROTGAMMAWGAF'
 
 
 # MPI loaded for repetitive
