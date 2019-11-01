@@ -13,4 +13,4 @@ module load raxml/8.2.10-gcc
 BS_PHYLA=$1
 FILE_EXT=$2
 
-raxmlHPC -J MRE -m PROTGAMMAF -z $BS_PHYLA -n $FILE_EXT
+raxmlHPC -J MRE -m PROTGAMMAWAGF -z $BS_PHYLA -n $FILE_EXT
