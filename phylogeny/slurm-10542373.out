@@ -1,0 +1,117 @@
+
+WARNING: The number of threads is currently set to 0
+You can specify the number of threads to run via -T numberOfThreads
+NumberOfThreads must be set to an integer value greater than 1
+
+RAxML, will now set the number of threads automatically to 2 !
+
+Found a total of 70 taxa in first tree of tree collection RAxML_bootstrap.novel-crypton_repbase020919
+Expecting all remaining trees in collection to have the same taxon set
+add [CryptonV-8_CFl_1p]
+add [CryptonV-3_HSal_1p]
+add [CryptonV-2_CFl_1p]
+add [CryptonV-6_CFl_1p]
+add [CryptonV-N5_DR_1p]
+add [CryptV-1_CGI_gadMor-3]
+add [CryptV-11_Cfl_anaTes-2_L]
+add [CryptonV-1_BTa_1p]
+add [CryptV-11_Cfl_anaTes-1_S]
+add [CryptV-12_Cfl_anaTes-1_S]
+add [CryptV-10_Cfl_anaTes-1_S]
+add [CryptonV-1_SSa_1p]
+add [CryptonV-1_DR_1p]
+add [CryptV-1_Cgi_danRer-1]
+add [CryptV-10_Cfl_anaTes-1_L]
+add [CryptV-1_CGi_oryLat-1]
+add [CryptV-1_CGi_spaAur-1_L]
+add [CryptonV-2_OL_1p]
+add [CryptV-1_Cgi_gadmor-2]
+add [CryptV-1_Cgi_cypCar-1]
+add [CryptV-1_Cgi_gadMor-1]
+add [CryptonV-3_OL_1p]
+add [CryptV-10_CFl_parRan-1]
+add [CryptV-10_CFl_gouWil-1]
+add [CryptonV-4_OL_1p]
+add [CryptV-1_CGi_sphOrb-1]
+add [CryptV-1_CGi_takRub-1]
+add [CryptonV-6_OL_1p]
+add [CryptonV-5_OL_1p]
+add [CryptonV-7_OL_1p]
+add [CryptonF-3_PS_2p]
+add [CryptonV-1_NV_1p]
+add [CryptonH-3_HM_1p]
+add [CryptonH-9_HM_1p]
+add [CryptonH-2_HM_1p]
+add [CryptonH-13_HM_1p]
+add [CryptonH-1_HM_1p]
+add [CryptonH-5_HM_1p]
+add [CryptonH-4_HM_1p]
+add [CryptonH-11_HM_1p]
+add [CryptonH-8_HM_1p]
+add [CryptonH-6_HM_1p]
+add [CryptonH-6_HM_2p]
+add [CryptonH-10_HM_1p]
+add [CryptonH-7_HM_1p]
+add [CryptonH-1_DR_1p]
+add [CryptV-1_CGi_spaAur-1_S]
+add [CryptonI-1_RPro_1p]
+add [CryptonS-1_ALai_1p]
+add [CryptonS-1_PS_1p]
+add [CryptonA-1_LG_1p]
+add [CryptonA-2_SK_1p]
+add [CryptonV-2_CTe_1p]
+add [CryptonV-3_DR_1p]
+add [CryptonF-5_PI_1p]
+add [CryptV-11_Cfl_anaTes-2_S]
+add [CryptonV-2_DR_1p]
+add [CryptonV-1_CGi_1p]
+add [CryptonV-11_CFl_1p]
+add [CryptonV-3_CFl_1p]
+add [CryptonV-2_HSal_1p]
+add [CryptonV-4_CFl_1p]
+add [CryptonV-12_CFl_1p]
+add [CryptonV-1_CFl_1p]
+add [CryptonV-1_HSal_1p]
+add [CryptonV-9_CFl_1p]
+add [CryptonV-4_HSal_1p]
+add [CryptonV-7_CFl_1p]
+add [CryptonV-5_CFl_1p]
+add [CryptonV-10_CFl_1p]
+
+
+WARNING: RAxML is not checking sequences for duplicate seqs and sites with missing data!
+
+
+This is the RAxML Master Pthread
+
+This is RAxML Worker Pthread Number: 1
+
+
+This is RAxML version 8.2.10 released by Alexandros Stamatakis on March 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+RAxML consensus tree computation
+
+
+RAxML was called as follows:
+
+raxmlHPC -J MRE -m PROTGAMMAWAGF -z RAxML_bootstrap.novel-crypton_repbase020919 -n MRE_CONS 
+
+
+
+
+Found 150 trees in File RAxML_bootstrap.novel-crypton_repbase020919
+
+RAxML extended Majority Rule consensus tree written to file: /domus/h1/karlnyr/research_training_19/phylogeny/RAxML_MajorityRuleExtendedConsensusTree.MRE_CONS
