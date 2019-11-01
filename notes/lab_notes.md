@@ -272,3 +272,11 @@ CryptonV do in some cases leave TSD, CryptonV-1_DR leaves 11bp TIRs, but a few o
 animalia phylogeny from: https://www.annualreviews.org/doi/10.1146/annurev-ecolsys-120213-091627
 
 fish phylogeny picture from: https://www.pnas.org/content/115/24/6249/tab-figures-data
+
+### 30-10-19
+after aligning with math, cluster with python script, then create consensus by majority rule. After this we used ORF-finder to find longest orf and if significantly large ones where found(similar to the largest in size) two ORFs where taken, marked with L for longeset and S for shortest. After, coding sequences for all novel and reported cryptonV's from repbase where aligned again using mafft, this was done to ensure that the ORFs taken from ORF-finder was somewhat aligning at all to the reported cryptonV's. This alignment was then followed by an mafft --add alignment(using the novel cryptonV and reported cryptonV from above as seed) of all reported CryptonH in repbase, in repbase reports they are not to divergent from to the cryptonV's, and atleast two of each other reported cryptonfamily in repbase, except for CryptonI which only had one entry in the database at the time.
+
+To construct the phylogenetic tree the substitution model was decided using MEGA model estimation, which uses maximum likelihood tests of multiple models. The one with the lowest BIC-score is deemed to be the best fit for the data, which in this case is WAG + G + F. Phylogenetic tree is produced using the WAG+G+F and 500 bootstraps. 
+
+### 1-11-19
+Model decided in MEGA, model run in raxml, trees summarized by sumtree and then imaged by figtree. great.
