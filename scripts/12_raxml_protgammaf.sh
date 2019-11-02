@@ -16,9 +16,10 @@ OUTFILE_PATH=$2
 MODEL='PROTGAMMAWAGF'
 
 
-# MPI loaded for boostrapping, T for number of threads(1 thread per core recommended), -b for random bootstrap seed(reproducible if same data), 
+# MPI loaded for boostrapping, T for number of threads(1 thread per core recommended), -b for random bootstrap seed(reproducible if same data),
 # -B for branch resolution, -N Number of bootstraps to be performed, -p to reproduce ML.
 raxmlHPC -s $ALIGNMENT_FILE_PATH \
+    -f b \
     -n $OUTFILE_PATH \
     -m $MODEL \
     -T 6 \
