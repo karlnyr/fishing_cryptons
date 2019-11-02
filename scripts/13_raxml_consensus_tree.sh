@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 4
 #SBATCH -t 01:00:00
-#SBATCH -J protgammaf_phylogeny
+#SBATCH -J
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
 
@@ -18,5 +18,5 @@ raxmlHPC \
     -m PROTGAMMAWAGF \
     -z $BS_PHYLA \
     -n $MR_CONS \
-    -T 12 \
+    -T 4 \
     -p 12321341
