@@ -17,13 +17,12 @@ FILE_EXT=$2
 MODEL='PROTGAMMAWAGF'
 
 # MPI loaded for boostrapping, T for number of threads(1 thread per core recommended), -b for random bootstrap seed(reproducible if same data),
-# -B for branch resolution, -N Number of bootstraps to be performed, -p to reproduce ML.
+# -N Number of bootstraps to be performed, -p to reproduce ML.
 raxmlHPC \
     -s $ALIGNMENT_FILE_PATH \
     -n $FILE_EXT \
     -m $MODEL \
     -T 12 \
     -b 126345 \
-    -B 0.03 \
     -N 150 \
     -p 3214
