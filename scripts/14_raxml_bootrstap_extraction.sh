@@ -2,21 +2,23 @@
 
 #SBATCH -A snic2018-3-568
 #SBATCH -p core
-#SBATCH -n 4
+#SBATCH -n 12
 #SBATCH -t 01:00:00
-#SBATCH -J protgammaf_phylogeny
+#SBATCH -J bootstrap_info_extraction
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user karl.nyren.6523@student.uu.se
 
 module load bioinfo-tools
 module load raxml/8.2.10-gcc-mpi
-BS_PHYLA=$1
-MR_CONS='MR_CONS'
+
+BOOTSTRAPS=$1
+ML_TREE=$2
+mr_cons_BS='MR_CONS-bootstrap'
 
 raxmlHPC \
-    -I autoMRE \
+    -f b \
+    -z $BOOTSTRAPS \
+    -t $ML_TREE \
     -m PROTGAMMAWAGF \
-    -z $BS_PHYLA \
-    -n $MR_CONS \
-    -T 12 \
-    -p 12321341
+    -n $mr_cons_BS
+    -T 12
