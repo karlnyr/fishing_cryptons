@@ -1,0 +1,41 @@
+
+
+WARNING: RAxML is not checking sequences for duplicate seqs and sites with missing data!
+
+
+
+This is RAxML version 8.2.10 released by Alexandros Stamatakis on March 2017.
+
+With greatly appreciated code contributions by:
+Andre Aberer      (HITS)
+Simon Berger      (HITS)
+Alexey Kozlov     (HITS)
+Kassian Kobert    (HITS)
+David Dao         (KIT and HITS)
+Sarah Lutteropp   (KIT and HITS)
+Nick Pattengale   (Sandia)
+Wayne Pfeiffer    (SDSC)
+Akifumi S. Tanabe (NRIFS)
+Charlie Taylor    (UF)
+
+
+RAxML Bipartition Computation: Drawing support values from trees in file RAxML_bootstrap.novel-crypton_repbase020919 onto tree in file RAxML_MajorityRuleExtendedConsensusTree.MRE_CONS
+
+
+RAxML was called as follows:
+
+raxmlHPC -f b -t RAxML_MajorityRuleExtendedConsensusTree.MRE_CONS -z RAxML_bootstrap.novel-crypton_repbase020919 -m PROTGAMMAWAGF -n bipartition_graph 
+
+
+
+
+Found 1 tree in File RAxML_MajorityRuleExtendedConsensusTree.MRE_CONS
+
+
+
+Found 150 trees in File RAxML_bootstrap.novel-crypton_repbase020919
+
+
+
+Found 1 tree in File RAxML_MajorityRuleExtendedConsensusTree.MRE_CONS
+
