@@ -13,17 +13,17 @@ module load raxml/8.2.10-gcc-mpi
 
 ALIGNMENT_FILE_PATH=$1
 FILE_EXT=$2
-N_BS=$3
 
 MODEL='PROTGAMMAWAGF'
 
 # MPI loaded for boostrapping, T for number of threads(1 thread per core recommended), -b for random bootstrap seed(reproducible if same data),
 # -N Number of bootstraps to be performed, -p to reproduce ML.
 raxmlHPC \
+    -f a
     -s $ALIGNMENT_FILE_PATH \
     -n $FILE_EXT \
     -m $MODEL \
     -T 12 \
-    -b 126345 \
-    -N $3 \
-    -p 3214
+    -p 3214 \
+    -N autoMRE \
+    -x 123123
