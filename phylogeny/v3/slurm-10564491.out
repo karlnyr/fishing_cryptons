@@ -1,0 +1,9 @@
+
+WARNING: The number of threads is currently set to 0
+You can specify the number of threads to run via -T numberOfThreads
+NumberOfThreads must be set to an integer value greater than 1
+
+RAxML, will now set the number of threads automatically to 2 !
+
+Error, to carry out an ML search after a rapid BS inference you must specify a random number seed with -x
+/var/spool/slurmd/job10564491/slurm_script: line 23: -s: command not found
