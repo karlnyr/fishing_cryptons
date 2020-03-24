@@ -2,7 +2,7 @@ import sys
 
 '''Used to separate model protein and gene hits from blast 6 formats,
 returns only those genomes that has X number of hits in the blast search.
-<script> <input_file> <out_dir> <out_index>'''
+04_handling_blast_out.py <input_file> <out_dir> <out_index>'''
 
 
 def is_model_protein(accession_nr):
