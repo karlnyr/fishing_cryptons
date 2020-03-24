@@ -52,8 +52,7 @@ def parse_n_blastn(fasta_file):
 
 
 def same_sequences(bh_1, bh_2):
-    '''Takes two blast_hit objects and checks if they are ambiguous,
-    meaning that they are done on the same protein'''
+    '''Takes two blast_hit objects and checks ambiguity'''
     if bh_1.query == bh_2.query and bh_1.subject == bh_2.subject:
         return True
     elif bh_1.query == bh_2.subject and bh_1.subject == bh_2.query:
@@ -64,7 +63,9 @@ def same_sequences(bh_1, bh_2):
 
 def seq_check(blast_hit, shortest_aln_allowed, perc_id_cutof):
     '''return true or fasle if statements are correct'''
-    if blast_hit.length >= shortest_aln_allowed and blast_hit.query != blast_hit.subject and blast_hit.perc_id >= perc_id_cutof:
+    if blast_hit.length >= shortest_aln_allowed and \
+                          blast_hit.query != blast_hit.subject and \
+                          blast_hit.perc_id >= perc_id_cutof:
         return True
     else:
         return False
@@ -79,7 +80,7 @@ def id_match(name_set, blast_hit):
 
 
 def filter_blast(aln, shortest_aln_allowed, perc_id_cutof):
-    '''Filter blast output, will return a non-redundant list where length is '''
+    '''Filter blast output, return a non-redundant list with user given statistics'''
     working_list = []
     list_init = 0
     for alignment in aln:
@@ -109,7 +110,7 @@ def filter_blast(aln, shortest_aln_allowed, perc_id_cutof):
 
 
 def chunkIt(bh_list):
-    '''returns list chunks to process, will reduce workload, I think?'''
+    '''returns list chunks to process'''
     nominator = len(bh_list)
     denominator = 2
     fragment_length = nominator / denominator
@@ -126,7 +127,8 @@ def chunkIt(bh_list):
 
 
 def messy_clustering(bh_list):
-    '''Loop over a list of blast hit object, group them together as long as there are combinations to do'''
+    '''Loop over a list of blast hit object, group them together as long as 
+    there are combinations to do'''
     changing = False
     out_list = []
     list_init = 0
