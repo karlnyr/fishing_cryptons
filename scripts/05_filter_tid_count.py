@@ -1,6 +1,6 @@
 import sys
 '''returns a list of taxa id that meets a blast hit parameter passed to the script.
-script.py <acn_file> <hit_param>'''
+05_filter_tid_count.py <acn_file> <hit_param>'''
 
 
 def filter_tid(acn_tid_file, hit_param):
