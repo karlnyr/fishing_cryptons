@@ -1,7 +1,7 @@
 import sys
 '''If fasta header is separated by blankspaces this script will take out
 the acn and abbreviate into new file.
-python3 <script> <in_file> <out_file>'''
+08_fasta_header_crop.py <in_file> <out_file>'''
 
 with open(sys.argv[1], 'r') as input_f, \
         open(sys.argv[2], 'w') as out_f:
