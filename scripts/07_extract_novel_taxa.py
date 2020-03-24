@@ -1,6 +1,6 @@
 import sys
 '''Extract taxa that is not existing in the repbase database
-python3 07_extract_novel_taxa.py <repbase_path> <blast_path> <fmt_6_path> <out_path>'''
+07_extract_novel_taxa.py <repbase_path> <blast_path> <fmt_6_path> <out_path>'''
 
 
 def novel_taxa(repbase_file, blast_file, fmt_6, out_file):
