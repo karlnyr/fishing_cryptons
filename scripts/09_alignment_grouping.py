@@ -8,7 +8,7 @@ from collections import defaultdict
 
 '''Will group alignment entries by their percentage identity. Returns a report of
 what sequences are to be grouped together by the user percentage cut of.
-python3 <script.py> <input_file.fasta> <percentage_id_cutof> <minimum_alignment_length>'''
+09_alignment_grouping.py <input_file.fasta> <percentage_id_cutof> <minimum_alignment_length>'''
 
 
 class blast_hit():
